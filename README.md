@@ -9,8 +9,6 @@ Make sure you have the following tools installed before running the project:
 - Python 3.x
 - Node.js
 - npm (installed automatically with Node.js)
-- Django
-- Django REST framework
 
 ## Project Setup
 
@@ -20,6 +18,7 @@ Make sure you have the following tools installed before running the project:
 git clone https://github.com/MojeZcg/Blog-Page
 cd Blog-Page
 ```
+
 #### 2. Set up the virtual environment and Python dependencies:
 
 ```bash
@@ -27,12 +26,15 @@ python -m venv venv
 source venv/bin/activate (or "venv\Scripts\activate" on Windows)
 pip install -r requirements.txt
 ```
+
 #### 3. Set up Node.js dependencies:
 
 ```bash
 npm install
 ```
+
 ## Running the Application
+
 #### Start the Django server:
 
 ```bash
@@ -44,7 +46,9 @@ python manage.py runserver
 ```bash
 npm run start
 ```
+
 The application will be available at http://localhost:8000/ (or "http://localhost:3000/" with React dev Server).
+
 ## Project Structure
 
 - Backend: Contains the Django code for the API and server configuration.
@@ -72,6 +76,7 @@ git commit -m "Description of your changes"
 ```bash
 git push origin your-branch-name
 ```
+
 #### 4. Open a pull request on GitHub.
 
 ## Contact
