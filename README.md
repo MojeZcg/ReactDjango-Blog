@@ -41,7 +41,7 @@ npm run build
 
 ## Running the Application
 
-#### Start the Django server:
+#### Start the Django server with the virtualenv activated:
 
 ```bash
 python manage.py runserver
