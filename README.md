@@ -1,6 +1,21 @@
-# Marketing Agency Website
+# React-Django Blog: A Dynamic Multilingual Experience with Dark Mode and Responsive Design
 
-This project is a web page developed using Django and React for a marketing agency. It provides information about the services offered, case studies, and ways to contact the agency.
+## Overview:
+
+This project showcases a modern and responsive blog page created using React and Django. The blog incorporates key features such as Dark Mode for enhanced readability, ensuring a pleasant user experience across different devices.
+
+## Features:
+
+- Dark Mode: Enjoy a visually comfortable reading experience in low-light environments with the Dark Mode feature.
+- Responsive Design: The blog is designed to adapt seamlessly to various screen sizes, providing an optimal viewing experience on desktops, tablets, and mobile devices.
+- Multilingual Support: The blog is available in both English and Spanish, offering a user-friendly interface for a diverse audience. Users can effortlessly switch between languages to access content in their preferred language.
+
+## Technologies Used:
+
+- Frontend: React.js
+- Backend: Django
+- Styling: Tailwind CSS
+- Internationalization: i18next for language translation
 
 ## Prerequisites
 
