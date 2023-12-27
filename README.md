@@ -104,4 +104,6 @@ git push origin your-branch-name
 
 For questions or issues, contact me via [Email](https://mail.google.com/mail/u/0/?fs=1&to=jsmonte31@gmail.com&su=Contact+me&tf=cm).
 
-### Thank you for contributing!
+## License
+
+This project is open-source and available under the [MIT License](./LICENSE).
