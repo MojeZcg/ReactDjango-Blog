@@ -33,9 +33,15 @@ pip install -r requirements.txt
 npm install
 ```
 
+#### 4. Set up the build for the django server:
+
+```bash
+npm run build
+```
+
 ## Running the Application
 
-#### Start the Django server:
+#### Start the Django server with the virtualenv activated:
 
 ```bash
 python manage.py runserver
