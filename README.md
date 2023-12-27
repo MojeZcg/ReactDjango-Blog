@@ -30,8 +30,8 @@ Make sure you have the following tools installed before running the project:
 #### 1. Clone this repository:
 
 ```bash
-git clone https://github.com/MojeZcg/Blog-Page
-cd Blog-Page
+git clone https://github.com/MojeZcg/ReactDjango-Blog
+cd ReactDjango-Blog
 ```
 
 #### 2. Set up the virtual environment and Python dependencies:
@@ -74,21 +74,6 @@ The application will be available at http://localhost:8000/ (or "http://localhos
 
 1. Copy the `.env.example` file and rename it to `.env`.
 2. Fill in the environment variables in the `.env` file as necessary.
-
-## Project Structure
-
-- Backend: Contains the Django code for the API and server configuration.
-- Frontend: Contains the React code for the user interface.
-
-## Additional characteristics
-
-### Dark mode
-
-The blog includes a dark theme that activates automatically based on your system settings. If you want to force the dark or light theme, you can do so from the user profile settings.
-
-### Translation
-
-The project supports translation in English and Spanish. You can change the language from the user profile settings. Make sure you add proper translations in the language files.
 
 ## Contributions
 
