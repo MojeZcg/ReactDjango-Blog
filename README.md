@@ -55,10 +55,10 @@ npm run start
 
 The application will be available at http://localhost:8000/ (or "http://localhost:3000/" with React dev Server).
 
-## Configuración del entorno
+## Environment configuration
 
-1. Copia el archivo `.env.example` y renómbralo a `.env`.
-2. Completa las variables de entorno en el archivo `.env` según sea necesario.
+1. Copy the `.env.example` file and rename it to `.env`.
+2. Fill in the environment variables in the `.env` file as necessary.
 
 ## Project Structure
 
