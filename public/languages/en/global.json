@@ -15,5 +15,27 @@
             "subtitle": "Immerse yourself in a universe of transformative possibilities. Each article is a door to evolution. Discover inspiration, knowledge and a path to your best version.",
             "botton": "Know more"
         }
+    },
+    "cards": {
+        "maincard":{
+            "title": "", 
+            "description": ""
+        },
+        "first":{
+            "title": "",
+            "subtitle": ""
+        },
+        "second":{
+            "title": "",
+            "subtitle": ""
+        },
+        "third":{
+            "title": "",
+            "subtitle": ""
+        },
+        "fourth":{
+            "title": "",
+            "subtitle": ""
+        }
     }
 }

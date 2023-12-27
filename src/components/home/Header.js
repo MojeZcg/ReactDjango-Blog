@@ -29,7 +29,7 @@ function Header() {
     <main className="">
       <div className=" h-full py-48 lg:py-36 2xl:py-[17.5rem]  ">
         <div className="text-center py-0 md:py-10 xl:py-16 2xl:py-24">
-          <h1 className=" px-2 py-0 mb-14 text-[2.5rem] font-bold leading-none tracking-tight text-black bg-opacity-70  md:text-4xl lg:text-3xl xl:text-5xl xl:px-56 xl:mb-16 2xl:text-7xl 2xl:px-64 dark:text-white">
+          <h1 className=" px-2 py-0 mb-14 text-[2.5rem] font-bold leading-none tracking-tight text-black bg-opacity-70  md:text-4xl lg:text-3xl xl:text-6xl xl:px-40 xl:mb-16 2xl:text-7xl 2xl:px-64 dark:text-white">
             {t("home.header.title")}
             <br className="flex md:hidden" />{" "}
             <span className=" text-oro">
@@ -44,7 +44,7 @@ function Header() {
               />
             </span>
           </h1>
-          <p className="mb-16 text-lg px-3 sm:px-40 font-bold text-gray-800 lg:text-2xl xl:text-xl xl:px-52 xl:mb-16 2xl:text-2xl dark:text-gray-200">
+          <p className="mb-16 text-lg px-3 sm:px-40 font-bold text-gray-800 lg:text-2xl xl:text-lg xl:px-64 xl:mb-16 2xl:text-2xl dark:text-gray-200">
             {t("home.header.subtitle")}
           </p>
           <div>

@@ -15,5 +15,27 @@
             "subtitle": "Sumérgete en un universo de posibilidades transformadoras. Cada artículo es una puerta hacia la evolución. Descubre inspiración, conocimiento y un camino hacia tu mejor versión.",
             "botton": "Conoce mas"
         }
+    },
+    "cards": {
+        "maincard":{
+            "title": "Crea increíbles proyectos.", 
+            "description": "Descubre la inspiración ilimitada para tus proyectos en nuestro blog. Desde ideas innovadoras hasta consejos prácticos, despierta tu creatividad y da vida a proyectos asombrosos. ¡Explora ahora!"
+        },
+        "first":{
+            "title": "Un blog con estilo Minimalista.",
+            "subtitle": "Explora la elegancia del minimalismo en nuestro blog. Descubre artículos simplificados y diseño limpio para inspirar tu vida diaria."
+        },
+        "second":{
+            "title": "Edita cuando quieras.",
+            "subtitle": "Libertad total. Personaliza y transforma tu contenido en cualquier momento con nuestra herramienta de edición fácil. ¡Exprésate sin límites!"
+        },
+        "third":{
+            "title": "Escribe sin limites.",
+            "subtitle": "Explora la libertad creativa en nuestro blog: 'Escribe sin límites'. Desata tu imaginación en cada palabra, sin restricciones."
+        },
+        "fourth":{
+            "title": "Escribe donde quieras.",
+            "subtitle": "Libertad de expresión en cada palabra. Explora tu creatividad con nuestra plataforma de blogs. Escribe donde quieras, sin límites."
+        }
     }
 }

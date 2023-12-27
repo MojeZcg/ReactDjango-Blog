@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 
@@ -39,21 +39,6 @@ function Navbar() {
 
   const handleButtonLng = () => {
     setButtonLng(!buttonLng);
-  };
-
-  const LanguageChangeObserver = () => {
-    useEffect(() => {
-      const handleLanguageChange = (event) => {
-        const newLang = event.detail.newLang;
-        console.log(`El idioma ha cambiado a: ${newLang}`);
-      };
-
-      window.addEventListener("languageChanged", handleLanguageChange);
-
-      return () => {
-        window.removeEventListener("languageChanged", handleLanguageChange);
-      };
-    }, []);
   };
 
   useEffect(() => {
@@ -124,7 +109,7 @@ function Navbar() {
           <button
             type="button"
             onClick={handleButtonLng}
-            className={`inline-flex items-center justify-center w-28 px-3 py-1 text-lg bg-transparent border-2 hover:border-2 focus:border-2 border-black dark:border-white text-black dark:text-white rounded-md`}
+            className={` hidden md:inline-flex  items-center justify-center w-28 px-3 py-1 text-lg bg-transparent border-2 hover:border-2 focus:border-2 border-black dark:border-white text-black dark:text-white rounded-md`}
           >
             <span
               className={`fi fi-${
@@ -160,10 +145,10 @@ function Navbar() {
             </ul>
           </div>
         </div>
-        <div className=" flex h-full w-full justify-between flex-nowrap md:px-0">
+        <div className=" flex h-full w-full items-center justify-between flex-nowrap md:px-0">
           <Link
             to="/"
-            className="left-0 h-30 w-40  mt-0 flex justify-center items-center"
+            className="left-0 mr-3 w-64 lg:w-40 mt-0 flex justify-center items-center"
           >
             <img
               src={Logo}
@@ -172,7 +157,7 @@ function Navbar() {
             />
             <img
               src={DarkLogo}
-              className="w-12 2xl:h-16 hidden dark:block"
+              className="w-16 2xl:h-16 hidden dark:block"
               alt="Logo"
             />
             <span className=" pl-1 dark:text-white text-4xl">React</span>
@@ -188,19 +173,25 @@ function Navbar() {
                     {link.name}
                   </NavLink>
                 ))}
-                <div onClick={handleDarkmode} className="w-10 ">
-                  {!darkmode ? (
-                    <FaSun size={28} className="text-oro/90" />
-                  ) : (
-                    <FaMoon size={28} className="text-slate-300" />
-                  )}
-                </div>
+              </div>
+              <div
+                onClick={handleDarkmode}
+                className="hidden lg:flex item-center justify-center py-3 px-auto w-14 lg:w-24 rounded-md border border-transparent dark:border-white text-white text-xl cursor-pointer shadow-md shadow-gray-400 "
+              >
+                {!darkmode ? (
+                  <FaSun size={28} className="text-oro/90 mr-2" />
+                ) : (
+                  <FaMoon size={28} className="text-slate-300/80 mr-1" />
+                )}
+                <span className=" text-black dark:text-white">
+                  {darkmode ? "Night" : "Light"}
+                </span>
               </div>
               <button
                 type="button"
-                className="ml-4 my-0 rounded-md text-center border-transparent bg-oro 
+                className="flex items-center justify-center text-2xl ml-0 lg:ml-6 my-0 rounded-md text-center border-transparent bg-oro 
                 lg:text-lg
-                px-6 py-[0.35rem] 
+                px-3 py-2 
                 border-2  border-black
                 font-medium 
                 text-black shadow-sm 
@@ -214,35 +205,40 @@ function Navbar() {
                 focus:bg-white
                 transition duration-300 ease-in-out 
                 xl:text-xl 
+                xl:py-[0.35rem]
                 2xl:py-3 2xl:px-10 2xl:text-2xl
                 dark:hover:bg-dark dark:hover:text-white dark:hover:border-white"
               >
                 {t("navbutton")}
                 {/** */}
-                <LuPencilLine className="ml-1 inline-flex w-4 h-4 2xl:w-5 2xl:h-5" />
+                <LuPencilLine className="ml-1 inline-flex w-7 h-7 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5" />
               </button>
             </div>
           </div>
           <div
             onClick={handleNav}
-            className="select-none flex items-center px-2 justify-center lg:hidden"
+            className="flex items-center px-4 justify-center lg:hidden"
           >
-            {!nav ? <IoClose size={35} /> : <IoMenu size={35} />}
+            {!nav ? (
+              <IoClose size={45} />
+            ) : (
+              <IoMenu className="text-black dark:text-white" size={45} />
+            )}
           </div>
           <div
             className={
               !nav
-                ? "fixed right-0 top-0 mt-[5rem] w-[60%] h-auto border-r-gray-900 bg-gray-100"
+                ? "fixed right-0 top-0 mt-24 w-[60%] h-auto border-r-gray-900 bg-gray-100/70 dark:bg-dark/80"
                 : "fixed left-[-100%]"
             }
           >
             <div className="w-full text-3xl  ">
-              <ul className="first:border-t-2 border-oro">
+              <ul className="last:border-b-2 border-oro">
                 {links.map((link) => (
                   <li key={link.id}>
                     <NavLink
                       to={link.link}
-                      className="py-5 px-3 m-0 w-full cursor-pointer items-center select-none text-base inline-flex font-medium border-b-2 border-oro leading-6 text-black "
+                      className="py-5 px-4 m-0 w-full cursor-pointer items-center select-none  inline-flex font-medium border-l-2 border-oro leading-8 text-2xl text-black dark:text-white "
                     >
                       {link.name}
                     </NavLink>

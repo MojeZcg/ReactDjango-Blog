@@ -24,7 +24,6 @@ i18
         "path",
         "subdomain",
       ],
-      caches: ["cookie"],
     },
     lng: "es",
     fallbackLng: ["es", "en"],

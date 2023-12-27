@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
 import { FaBloggerB } from "react-icons/fa";
 import { SiPowerpages } from "react-icons/si";
 import { IoMdDocument } from "react-icons/io";
 import { FaPencil } from "react-icons/fa6";
 
 export default function DescriptionCards() {
+  const { t } = useTranslation("global");
+
   return (
     <section className="relative pt-6 ">
       <div className="container mx-auto">
@@ -23,13 +26,10 @@ export default function DescriptionCards() {
                   className="absolute left-0 w-full block h-95-px -top-94-px"
                 ></svg>
                 <h4 className="text-2xl font-bold text-black dark:text-white">
-                  Crea increíbles proyectos.
+                  {t("cards.maincard.title")}
                 </h4>
                 <p className="text-md font-light mt-2 text-dark dark:text-gray-200">
-                  Descubre la inspiración ilimitada para tus proyectos en
-                  nuestro blog. Desde ideas innovadoras hasta consejos
-                  prácticos, despierta tu creatividad y da vida a proyectos
-                  asombrosos. ¡Explora ahora!
+                  {t("cards.maincard.description")}
                 </p>
               </blockquote>
             </div>
@@ -44,12 +44,10 @@ export default function DescriptionCards() {
                       <FaBloggerB className="h-7 w-7 dark:text-gray-200" />
                     </div>
                     <h6 className="text-xl mb-1 font-semibold dark:text-white">
-                      Un blog con estilo Minimalista.
+                      {t("cards.first.title")}
                     </h6>
                     <p className="mb-4 text-gray-800 dark:text-gray-100">
-                      Explora la elegancia del minimalismo en nuestro blog.
-                      Descubre artículos simplificados y diseño limpio para
-                      inspirar tu vida diaria.
+                      {t("cards.first.subtitle")}
                     </p>
                   </div>
                 </div>
@@ -59,12 +57,10 @@ export default function DescriptionCards() {
                       <FaPencil className="h-6 w-6 dark:text-white" />
                     </div>
                     <h6 className="text-xl mb-1 font-semibold dark:text-white">
-                      Edita cuando quieras.
+                      {t("cards.second.title")}
                     </h6>
                     <p className="mb-4 text-gray-800 dark:text-gray-100">
-                      Libertad total. Personaliza y transforma tu contenido en
-                      cualquier momento con nuestra herramienta de edición
-                      fácil. ¡Exprésate sin límites!
+                      {t("cards.second.subtitle")}
                     </p>
                   </div>
                 </div>
@@ -77,12 +73,10 @@ export default function DescriptionCards() {
                       <SiPowerpages className="h-7 w-7 dark:text-white" />
                     </div>
                     <h6 className="text-xl mb-1 font-semibold dark:text-white">
-                      Escribe sin limites.
+                      {t("cards.third.title")}
                     </h6>
                     <p className="mb-4 text-gray-800 dark:text-gray-100">
-                      Explora la libertad creativa en nuestro blog: 'Escribe sin
-                      límites'. Desata tu imaginación en cada palabra, sin
-                      restricciones.
+                      {t("cards.third.subtitle")}
                     </p>
                   </div>
                 </div>
@@ -92,12 +86,10 @@ export default function DescriptionCards() {
                       <IoMdDocument className="h-7 w-7 dark:text-white" />
                     </div>
                     <h6 className="text-xl mb-1 font-semibold dark:text-white">
-                      Escribe donde quieras.
+                      {t("cards.fourth.title")}
                     </h6>
                     <p className="mb-10 text-gray-800 dark:text-gray-100">
-                      Libertad de expresión en cada palabra. Explora tu
-                      creatividad con nuestra plataforma de blogs. Escribe donde
-                      quieras, sin límites.
+                      {t("cards.fourth.subtitle")}
                     </p>
                   </div>
                 </div>

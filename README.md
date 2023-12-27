@@ -55,6 +55,11 @@ npm run start
 
 The application will be available at http://localhost:8000/ (or "http://localhost:3000/" with React dev Server).
 
+## Configuración del entorno
+
+1. Copia el archivo `.env.example` y renómbralo a `.env`.
+2. Completa las variables de entorno en el archivo `.env` según sea necesario.
+
 ## Project Structure
 
 - Backend: Contains the Django code for the API and server configuration.
