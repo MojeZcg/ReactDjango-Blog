@@ -1,20 +1,79 @@
+import { useCallback, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+
 import { IoMenu, IoClose } from "react-icons/io5";
-import { useEffect, useState } from "react";
 import { LuPencilLine } from "react-icons/lu";
 import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa6";
+
 import Logo from "assets/svg/logo.svg";
 import DarkLogo from "assets/svg/darkLogo.svg";
 
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+
 function Navbar() {
-  let links = [
-    { name: "Inicio", link: "/" },
-    { name: "Blog", link: "/blog" },
-    { name: "Nosotros", link: "/about" },
-    { name: "Contacto", link: "/contact" },
+  const languages = [
+    {
+      code: "en",
+      name: "English",
+      contry_code: "us",
+    },
+    {
+      code: "es",
+      name: "Español",
+      contry_code: "es",
+    },
   ];
+
+  const { t, i18n } = useTranslation("global");
+
+  const [nav, setNav] = useState(true);
+  const [darkmode, setDarkmode] = useState(true);
+  const [links, setLinks] = useState([]);
+  const [buttonLng, setButtonLng] = useState(true);
+
+  const currentLanguage = i18n.language;
+
+  const handleButtonLng = () => {
+    setButtonLng(!buttonLng);
+  };
+
+  const LanguageChangeObserver = () => {
+    useEffect(() => {
+      const handleLanguageChange = (event) => {
+        const newLang = event.detail.newLang;
+        console.log(`El idioma ha cambiado a: ${newLang}`);
+      };
+
+      window.addEventListener("languageChanged", handleLanguageChange);
+
+      return () => {
+        window.removeEventListener("languageChanged", handleLanguageChange);
+      };
+    }, []);
+  };
+
+  useEffect(() => {
+    const updateLinks = () => {
+      const newLinks = [
+        { name: t("navbar.home"), link: "/" },
+        { name: "Blog", link: "/blog" },
+        { name: t("navbar.about"), link: "/about" },
+        { name: t("navbar.contact"), link: "/contact" },
+      ];
+      setLinks(newLinks);
+    };
+    updateLinks();
+
+    i18n.on("languageChanged", updateLinks);
+
+    return () => {
+      i18n.off("languageChanged", updateLinks);
+    };
+  }, [i18n, t]);
 
   window.onscroll = function () {
     scrollFunction();
@@ -39,13 +98,9 @@ function Navbar() {
     }
   }
 
-  const [nav, setNav] = useState(true);
-
   const handleNav = () => {
     setNav(!nav);
   };
-
-  const [darkmode, setDarkmode] = useState(false);
 
   useEffect(() => {
     if (darkmode) {
@@ -53,7 +108,6 @@ function Navbar() {
     } else {
       document.querySelector("html").classList.remove("dark");
     }
-    return;
   }, [darkmode]);
 
   const handleDarkmode = () => {
@@ -63,13 +117,53 @@ function Navbar() {
   return (
     <nav
       id="navbar"
-      className="w-full shadow-sm dark:shadow-slate-800/60 transition duration-300 ease-in-out fixed z-50"
+      className="w-full shadow-sm dark:shadow-slate-800/60 bg-white dark:bg-dark transition duration-300 ease-in-out fixed z-50"
     >
-      <div className=" px-0 mx-0 py-4 sm:px-6 xl:py-2 2xl:py-4 ">
-        <div className=" flex h-full justify-between flex-nowrap md:px-0">
+      <div className=" flex items-center px-0 mx-0 py-4 sm:px-5 xl:py-2 2xl:py-4 ">
+        <div className="relative inline-block text-left">
+          <button
+            type="button"
+            onClick={handleButtonLng}
+            className={`inline-flex items-center justify-center w-28 px-3 py-1 text-lg bg-transparent border-2 hover:border-2 focus:border-2 border-black dark:border-white text-black dark:text-white rounded-md`}
+          >
+            <span
+              className={`fi fi-${
+                currentLanguage === "en" ? "us" : "es"
+              } mr-1 h-4 w-4`}
+            ></span>
+            {currentLanguage === "en" ? "English" : "Spanish"}
+          </button>
+          <div
+            className={`absolute right-0 w-28 mt-2  origin-top-right bg-white/80 dark:bg-dark/80  ${
+              buttonLng
+                ? "border-none"
+                : "border border-black dark:border-white"
+            } rounded-lg shadow-lg`}
+          >
+            <ul className={buttonLng ? "hidden" : "block"}>
+              {languages.map(({ code, name, contry_code }) => (
+                <li
+                  key={contry_code}
+                  className="flex items-center justify-center"
+                >
+                  <button
+                    onClick={() => i18next.changeLanguage(code)}
+                    className="h-full w-22 text-black dark:text-white "
+                  >
+                    <span
+                      className={`fi fi-${contry_code}   mr-2 rounded-sm py-3 px-3`}
+                    ></span>
+                    {name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className=" flex h-full w-full justify-between flex-nowrap md:px-0">
           <Link
             to="/"
-            className="left-0 h-30 w-64 ml-10 mt-0 flex justify-center items-center"
+            className="left-0 h-30 w-40  mt-0 flex justify-center items-center"
           >
             <img
               src={Logo}
@@ -88,7 +182,6 @@ function Navbar() {
               <div className="hidden lg:flex">
                 {links.map((link) => (
                   <NavLink
-                    key={link.id}
                     to={link.link}
                     className="  cursor-pointer select-none text-base inline-flex font-medium border-b-2 border-transparent leading-6 text-gray-900 dark:text-white hover:border-b-2 hover: border-oro mx-1 lg:mx-7 md:mx-0 md:ml-8 md:my-0 lg:text-base xl:ml-5 xl:text-lg 2xl:text-2xl"
                   >
@@ -124,7 +217,8 @@ function Navbar() {
                 2xl:py-3 2xl:px-10 2xl:text-2xl
                 dark:hover:bg-dark dark:hover:text-white dark:hover:border-white"
               >
-                Write{/** */}
+                {t("navbutton")}
+                {/** */}
                 <LuPencilLine className="ml-1 inline-flex w-4 h-4 2xl:w-5 2xl:h-5" />
               </button>
             </div>

@@ -54,6 +54,16 @@ The application will be available at http://localhost:8000/ (or "http://localhos
 - Backend: Contains the Django code for the API and server configuration.
 - Frontend: Contains the React code for the user interface.
 
+## Additional characteristics
+
+### Dark mode
+
+The blog includes a dark theme that activates automatically based on your system settings. If you want to force the dark or light theme, you can do so from the user profile settings.
+
+### Translation
+
+The project supports translation in English and Spanish. You can change the language from the user profile settings. Make sure you add proper translations in the language files.
+
 ## Contributions
 
 ### If you want to contribute to this project, follow these steps:

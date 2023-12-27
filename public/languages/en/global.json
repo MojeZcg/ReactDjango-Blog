@@ -1,0 +1,19 @@
+{
+    "navbar": {
+        "home": "Home",
+        "blog": "blog",
+        "about":"About",
+        "contact":"Contact us"
+    },
+    "navbutton":"Write",
+    "home": {
+        "header": {
+            "title": "Explore our blog where each article is an invitation to" ,
+            "first":"Innovation." ,
+            "second":"Creativity.",
+            "third":"Transformation.",
+            "subtitle": "Immerse yourself in a universe of transformative possibilities. Each article is a door to evolution. Discover inspiration, knowledge and a path to your best version.",
+            "botton": "Know more"
+        }
+    }
+}

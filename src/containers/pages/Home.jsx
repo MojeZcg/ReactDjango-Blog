@@ -1,10 +1,10 @@
-import Navbar from "components/navigation/Navbar";
-import Footer from "components/navigation/Footer";
 import Layout from "hocs/layouts/Layout";
+import Navbar from "components/navigation/Navbar";
 import Header from "components/home/Header";
 import DescriptionCards from "components/home/DescriptionCards";
-import CTA from "components/home/CTA";
 import Feature from "components/home/Feature";
+import CTA from "components/home/CTA";
+import Footer from "components/navigation/Footer";
 
 function Home(){
     return(
