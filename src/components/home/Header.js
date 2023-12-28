@@ -10,9 +10,9 @@ function Header() {
   useEffect(() => {
     const updateWords = () => {
       const newWords = [
-        t("home.header.first"),
-        t("home.header.second"),
-        t("home.header.third"),
+        t("home.header.words.first"),
+        t("home.header.words.second"),
+        t("home.header.words.third"),
       ];
       setWords(newWords);
     };
@@ -27,11 +27,10 @@ function Header() {
 
   return (
     <main className="">
-      <div className=" h-full py-48 lg:py-36 2xl:py-[17.5rem]  ">
-        <div className="text-center py-0 md:py-10 xl:py-16 2xl:py-24">
-          <h1 className=" px-2 py-0 mb-14 text-[2.5rem] font-bold leading-none tracking-tight text-black bg-opacity-70  md:text-4xl lg:text-3xl xl:text-6xl xl:px-40 xl:mb-16 2xl:text-7xl 2xl:px-64 dark:text-white">
-            {t("home.header.title")}
-            <br className="flex md:hidden" />{" "}
+      <div className=" h-full ">
+        <div className="text-center py-60 md:py-10 xl:pb-36 xl:pt-52 2xl:py-96 ">
+          <h1 className="  px-4 mb-10 xl:leading-snug text-4xl font-black tracking-tight text-black bg-opacity-70  md:text-4xl lg:text-3xl xl:text-5xl xl:px-24 xl:mb-16 2xl:text-7xl 2xl:px-48 dark:text-white">
+            {t("home.header.title")}{" "}
             <span className=" text-oro">
               <Typewriter
                 words={words}
@@ -44,15 +43,15 @@ function Header() {
               />
             </span>
           </h1>
-          <p className="mb-16 text-lg px-3 sm:px-40 font-bold text-gray-800 lg:text-2xl xl:text-lg xl:px-64 xl:mb-16 2xl:text-2xl dark:text-gray-200">
+          <p className="mb-16 text-base px-6 sm:px-40 font-bold text-gray-800 lg:text-2xl xl:text-lg xl:px-52 xl:mb-16 2xl:text-2xl dark:text-gray-200">
             {t("home.header.subtitle")}
           </p>
           <div>
             <a
               href="/"
-              className=" items-center justify-center px-8 py-3 text-lg xl:text-lg rounded-xl font-medium text-center border-transparent
+              className=" items-center justify-center px-8 py-3 text-sm xl:text-base rounded-xl text-center border-transparent
               border-2 bg-oro text-gray-900 shadow-sm hover:bg-white hover:text-black 
-              hover:border-black focus:text-oro-inespecifico focus:border-2 focus:border-oro-inespecifico focus:bg-white transition duration-300 ease-in-out md:text-base 2xl:py-3 2xl:px-14 2xl:text-2xl dark:hover:bg-dark dark:hover:text-white dark:hover:border-white "
+              hover:border-black focus:text-oro-inespecifico focus:border-2 focus:border-oro-inespecifico focus:bg-white transition duration-300 ease-in-out md:text-base 2xl:py-3 2xl:px-10 2xl:text-xl dark:hover:bg-dark dark:hover:text-white dark:hover:border-white "
             >
               {t("home.header.botton")}
             </a>

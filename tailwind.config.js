@@ -21,7 +21,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      Main: ["Afacad", "sans-serif"],
+      Main: ["Onest", "sans-serif"],
     },
   },
   plugins: [

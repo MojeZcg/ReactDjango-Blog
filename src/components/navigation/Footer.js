@@ -1,53 +1,50 @@
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { connect } from "react-redux";
 
 function Footer() {
+  const { t, i18n } = useTranslation("global");
+
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    const updateLinks = () => {
+      const newLinks = [
+        { name: t("navbar.home"), link: "/" },
+        { name: "Blog", link: "/blog" },
+        { name: t("navbar.about"), link: "/about" },
+        { name: t("navbar.contact"), link: "/contact" },
+      ];
+      setLinks(newLinks);
+    };
+    updateLinks();
+
+    i18n.on("languageChanged", updateLinks);
+
+    return () => {
+      i18n.off("languageChanged", updateLinks);
+    };
+  }, [i18n, t]);
+
   return (
     <footer className=" relative ">
-      <div className="bg-black dark:bg-white opacity-60 h-[1px] w-[80%] rounded-md absolute left-[10%]"></div>
+      <div className="bg-black dark:bg-white opacity-60 h-[1px] w-[95%] rounded-md absolute left-[2.5%]"></div>
       <div className="mx-auto max-w-full pt-4 2xl:pt-6 px-4 pb-6 sm:px-6 lg:px-8  ">
-        <p className="mx-auto max-w-md text-center leading-relaxed text-gray-500 dark:text-white 2xl:text-2xl ">
-          Blog para Todos
+        <p className="mx-auto max-w-md text-center leading-relaxed text-sm xl:text-base text-gray-600 dark:text-gray-700 2xl:text-xl ">
+          {t("footer.slogan")}
         </p>
 
-        <ul className="mt-3 flex flex-wrap justify-center gap-10 md:gap-8 lg:gap-18 2xl:gap-24 2xl:text-xl">
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-300 dark:hover:text-gray-300/75"
-              href="/"
-            >
-              Nosotros{" "}
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-300 dark:hover:text-gray-300/75"
-              href="/"
-            >
-              Servicios{" "}
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-300 dark:hover:text-gray-300/75"
-              href="/"
-            >
-              Proyectos{" "}
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-300 dark:hover:text-gray-300/75"
-              href="/"
-            >
-              Blog{" "}
-            </a>
-          </li>
+        <ul className="mt-4 mb-4 2xl:mt-6 2xl:mb-5 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-18 2xl:gap-8 2xl:text-xl">
+          {links.map((link) => (
+            <li className=" cursor-pointer select-none text-sm inline-flex font-medium border-b-2 border-transparent leading-6 text-gray-900 dark:text-white  hover: border-oro mx-1 lg:mx-7 md:mx-0 md:ml-8 md:my-0 lg:text-base xl:ml-5 xl:text-base 2xl:text-lg ">
+              <a key={link.key} href={link.link}>
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        <ul className="mt-3 flex justify-center  gap-6 md:gap-8 2xl:gap-16">
+        <ul className=" flex justify-center  gap-6 md:gap-8 2xl:gap-14">
           <li>
             <a
               href="/"
@@ -57,7 +54,7 @@ function Footer() {
             >
               <span className="sr-only">Facebook</span>
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 2xl:h-8 2xl:w-8"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -80,7 +77,7 @@ function Footer() {
             >
               <span className="sr-only">Instagram</span>
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 2xl:h-8 2xl:w-8"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -103,7 +100,7 @@ function Footer() {
             >
               <span className="sr-only">Twitter</span>
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 2xl:h-8 2xl:w-8"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -122,7 +119,7 @@ function Footer() {
             >
               <span className="sr-only">GitHub</span>
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 2xl:h-8 2xl:w-8"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"

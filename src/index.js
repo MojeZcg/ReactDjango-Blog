@@ -23,7 +23,7 @@ i18
         "htmlTag",
         "path",
         "subdomain",
-      ],
+      ],  
     },
     lng: "es",
     fallbackLng: ["es", "en"],
