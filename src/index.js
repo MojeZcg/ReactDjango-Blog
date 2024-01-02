@@ -7,12 +7,22 @@ import i18 from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
+import { ES } from "languages/es/global";
+import { EN } from "languages/en/global";
 
 i18
   .use(initReactI18next)
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
+    resources: {
+      en: {
+        global: EN,
+      },
+      es: {
+        global: ES,
+      },
+    },
     detection: {
       order: [
         "querystring",
@@ -23,7 +33,7 @@ i18
         "htmlTag",
         "path",
         "subdomain",
-      ],  
+      ],
     },
     lng: "es",
     fallbackLng: ["es", "en"],

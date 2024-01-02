@@ -33,6 +33,8 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
+    'apps.blog',
+    'apps.category'
 ]
 
 THIRD_PARTY_APPS = [
@@ -42,17 +44,11 @@ THIRD_PARTY_APPS = [
     'ckeditor_uploader',
 ]
 
-INSTALLED_APPS = DJANGO_APPS +PROJECT_APPS +THIRD_PARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 CKEDITOR_CONFIGS = {
-    'awesome_ckeditor': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-         ],
+    'default': {
+        'toolbar': 'full',
          'autoPharagraph' : False
     },
 }
@@ -125,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'es'
-TIME_ZONE = 'UTC-3'
+TIME_ZONE = 'America/Buenos_Aires'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True

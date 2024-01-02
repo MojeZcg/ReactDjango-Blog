@@ -28,8 +28,8 @@ function Header() {
   return (
     <main className="">
       <div className=" h-full ">
-        <div className="text-center py-60 md:py-10 xl:pb-36 xl:pt-52 2xl:py-96 ">
-          <h1 className="  px-4 mb-10 xl:leading-snug text-4xl font-black tracking-tight text-black bg-opacity-70  md:text-4xl lg:text-3xl xl:text-5xl xl:px-24 xl:mb-16 2xl:text-7xl 2xl:px-48 dark:text-white">
+        <div className="text-center py-60 md:py-84 xl:pb-36 xl:pt-64 2xl:py-96 ">
+          <h1 className="  px-4 mb-10 xl:leading-tight text-5xl font-black tracking-tight text-black bg-opacity-70 md:text-6xl lg:text-4xl lg:px-24 xl:text-5xl xl:px-24 xl:mb-16 2xl:text-7xl 2xl:px-22 dark:text-white">
             {t("home.header.title")}{" "}
             <span className=" text-oro">
               <Typewriter
@@ -43,7 +43,7 @@ function Header() {
               />
             </span>
           </h1>
-          <p className="mb-16 text-base px-6 sm:px-40 font-bold text-gray-800 lg:text-2xl xl:text-lg xl:px-52 xl:mb-16 2xl:text-2xl dark:text-gray-200">
+          <p className="mb-16 text-base px-6 sm:px-40 font-bold text-gray-800 lg:text-lg lg:px-0 xl:text-lg xl:px-52 xl:mb-16 2xl:text-2xl dark:text-gray-200">
             {t("home.header.subtitle")}
           </p>
           <div>
