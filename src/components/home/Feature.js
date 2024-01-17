@@ -5,7 +5,7 @@ function Feature() {
 
   return (
     <section className="w-full">
-      <div className="px-5 text-center xl:text-start xl:px-12 xl:py-10 mx-auto">
+      <div className="px-5 text-center xl:text-start xl:px-16 xl:py-10 mx-auto">
         <h2 className="text-3xl font-semibold text-black dark:text-white capitalize lg:text-5xl">
           {t("feature.title")}{" "}
           <span className="underline decoration-oro">Blog</span>

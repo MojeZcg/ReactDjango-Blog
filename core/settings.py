@@ -1,6 +1,7 @@
-from pathlib import Path
 import os
-import environ 
+from pathlib import Path
+
+import environ
 
 env = environ.Env()
 environ.Env.read_env()
@@ -56,7 +57,7 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -151,6 +152,21 @@ REST_FRAMEWORKS = {
 }
 
 CORS_ORIGINS_WHITELIST = env.list('CORS_ORIGINS_WHITELIST_DEV')
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+
 CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

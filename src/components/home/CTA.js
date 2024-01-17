@@ -5,7 +5,7 @@ export default function CTA() {
 
   return (
     <section className=" w-full flex items-center justify-center">
-      <div className="max-w-screen px-6 py-8 sm:py-12 lg:py-12 xl:px-14 2xl:px-56">
+      <div className="max-w-screen px-6 py-8 sm:py-12 lg:py-12 xl:px-16 2xl:px-56">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 2xl:gap-52">
           <div className="relative h-64 overflow-hidden shadow-lg shadow-gray-400 rounded-xl sm:h-80 lg:order-last lg:h-full dark:shadow-sm dark:shadow-gray-800">
             <img

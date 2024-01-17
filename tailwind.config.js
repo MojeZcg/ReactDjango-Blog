@@ -8,7 +8,6 @@ module.exports = {
       colors: {
         oro: "#e6b219",
         dark: "#111114",
-        dark2: "#121212",
         "oro-inespecifico": "#E5A65E",
         "oro-web": "#FFD700",
       },

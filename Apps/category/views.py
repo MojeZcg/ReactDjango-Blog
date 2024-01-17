@@ -1,8 +1,9 @@
-from rest_framework.views import APIView
+from rest_framework import permissions, status
 from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import permissions
+from rest_framework.views import APIView
+
 from .models import Category
+
 
 class ListCategoriesView(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -39,6 +40,6 @@ class ListCategoriesView(APIView):
                      
                     result.append(item)
 
-            return Response({'success': result}, status=status.HTTP_200_OK)
+            return Response({'categories': result}, status=status.HTTP_200_OK)
         else:
             return Response({'error': 'No categories found'}, status=status.HTTP_404_NOT_FOUND)

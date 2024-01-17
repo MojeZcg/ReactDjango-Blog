@@ -2,8 +2,8 @@ export const EN = {
   navbar: {
     home: "Home",
     blog: "Blog",
-    about: "About",
-    contact: "Contact us",
+    about: "About us",
+    contact: "Contact",
   },
   navbutton: "Write",
   home: {

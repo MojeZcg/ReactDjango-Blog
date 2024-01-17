@@ -51,9 +51,11 @@ const loadingMarkup = (
 );
 
 root.render(
-  <Suspense fallback={loadingMarkup}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Suspense>
+  <>
+    <Suspense fallback={loadingMarkup}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Suspense>
+  </>
 );

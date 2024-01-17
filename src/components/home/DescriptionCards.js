@@ -9,9 +9,9 @@ export default function DescriptionCards() {
 
   return (
     <section className="relative w-full">
-      <div className="px-0 xl:px-12 2xl:px-16">
-        <div className="flex flex-wrap justify-center md:justify-between items-center text-center md:text-start py-10">
-          <div className=" w-11/12 md:w-6/12 lg:w-4/12 ">
+      <div className="px-0 xl:px-16 2xl:px-16">
+        <div className="flex flex-wrap justify-center md:justify-between items-center text-center md:text-start ">
+          <div className=" w-11/12 md:w-6/12 lg:w-5/12 ">
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-gray-400 dark:shadow-none shadow-xl rounded-xl bg-white dark:bg-dark ">
               <img
                 alt="..."
@@ -43,7 +43,7 @@ export default function DescriptionCards() {
                     <div className="text-blueGray-500  p-4 md:p-3  text-center inline-flex items-center justify-center mb-7 2xl:mb-8 shadow-lg shadow-gray-500 rounded-full bg-white dark:bg-slate-900 dark:shadow-gray-700 dark:shadow-md">
                       <FaBloggerB className="h-7 w-7 2xl:h-8 2xl:w-8 dark:text-gray-200" />
                     </div>
-                    <h6 className="text-xl 2xl:text-2xl mb-1 font-semibold dark:text-white">
+                    <h6 className="text-xl xl:text-lg 2xl:text-2xl mb-1 font-semibold dark:text-white">
                       {t("cards.first.title")}
                     </h6>
                     <p className=" leading-7 text-gray-800 dark:text-gray-300 2xl:text-xl text-md">
@@ -56,10 +56,10 @@ export default function DescriptionCards() {
                     <div className="text-blueGray-500 p-4 md:p-3 text-center inline-flex items-center justify-center mb-7 2xl:mb-8 shadow-lg shadow-gray-500  rounded-full bg-white dark:bg-slate-900 dark:shadow-gray-700 dark:shadow-md">
                       <FaPencil className="h-6 w-6 2xl:h-8 2xl:w-8  dark:text-white" />
                     </div>
-                    <h6 className="text-xl 2xl:text-2xl mb-3 dark:text-white">
+                    <h6 className="text-xl xl:text-lg 2xl:text-2xl mb-3 dark:text-white">
                       {t("cards.second.title")}
                     </h6>
-                    <p className="mb- leading7 text-gray-800 dark:text-gray-300 2xl:text-xl text-md">
+                    <p className=" leading-7 text-gray-800 dark:text-gray-300 2xl:text-xl text-md">
                       {t("cards.second.subtitle")}
                     </p>
                   </div>
@@ -72,7 +72,7 @@ export default function DescriptionCards() {
                     <div className="text-blueGray-500  text-center inline-flex items-center justify-center mb-7 2xl:mb-8 p-3 shadow-lg shadow-gray-500 rounded-full bg-white dark:bg-slate-900 dark:shadow-gray-700 dark:shadow-md">
                       <SiPowerpages className="h-7 w-7 2xl:h-8 2xl:w-8 dark:text-white" />
                     </div>
-                    <h6 className="text-xl 2xl:text-2xl mb-1 font-semibold dark:text-white">
+                    <h6 className="text-xl xl:text-lg 2xl:text-2xl mb-1 font-semibold dark:text-white">
                       {t("cards.third.title")}
                     </h6>
                     <p className="leading-7 2xl:mb-0 text-gray-800 dark:text-gray-300 2xl:text-xl text-md">
@@ -85,7 +85,7 @@ export default function DescriptionCards() {
                     <div className="text-dark p-3 text-center inline-flex items-center justify-center mb-7 2xl:mb-8 shadow-lg shadow-gray-500 rounded-full bg-white dark:bg-slate-900 dark:shadow-gray-700 dark:shadow-md">
                       <IoMdDocument className="h-7 w-7 2xl:h-8 2xl:w-8  dark:text-white" />
                     </div>
-                    <h6 className="text-xl 2xl:text-2xl mb-1 font-semibold dark:text-white">
+                    <h6 className="text-xl xl:text-lg 2xl:text-2xl mb-1 font-semibold dark:text-white">
                       {t("cards.fourth.title")}
                     </h6>
                     <p className=" leading-7 mb-10 text-gray-800 dark:text-gray-300 2xl:text-xl text-md">

@@ -107,7 +107,7 @@ function Navbar() {
   return (
     <nav
       id="navbar"
-      className="w-full shadow-sm dark:shadow-slate-800/60 bg-white dark:bg-dark transition duration-300 ease-in-out fixed z-50"
+      className="w-full shadow-sm  shadow-black/40 dark:shadow-white/40 bg-white dark:bg-dark transition duration-300 ease-in-out fixed z-50"
     >
       <div className=" flex items-center px-0 mx-0 py-4 sm:px-5 xl:py-2 2xl:py-4 ">
         <div className="relative inline-block text-left">
@@ -168,10 +168,11 @@ function Navbar() {
             <span className=" pl-1 dark:text-white text-3xl">React</span>
           </Link>
           <div className="flex justify-end">
-            <div className=" left-0 mt-0 flex flex-shrink-0 justify-center items-center md:z-auto z-[-1]  ">
+            <div className=" left-0 mt-0 flex flex-shrink-0 justify-center items-center md:z-auto z-[-1]">
               <div className="hidden lg:flex">
                 {links.map((link) => (
                   <NavLink
+                    key={link.key}
                     to={link.link}
                     className="  cursor-pointer select-none text-lg inline-flex font-medium border-b-2 border-transparent leading-6 text-gray-900 dark:text-white  hover: border-oro mx-1 lg:mx-7 md:mx-0 md:ml-8 md:my-0 lg:text-base xl:ml-5 xl:text-base 2xl:text-xl"
                   >
