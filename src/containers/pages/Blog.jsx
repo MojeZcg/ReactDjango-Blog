@@ -7,7 +7,11 @@ import { Helmet } from "react-helmet-async";
 
 import { get_categories } from "redux/actions/categories/categories";
 import { connect } from "react-redux";
-import { get_blog_list, get_blog_list_page } from "redux/actions/blog/blog";
+import {
+  get_blog_list,
+  get_blog_list_category,
+  get_blog_list_page,
+} from "redux/actions/blog/blog";
 import ByCategory from "components/blog/ByCategory";
 
 function Blog({
@@ -23,7 +27,7 @@ function Blog({
     window.scroll(0, 0);
     get_categories();
     get_blog_list();
-    get_blog_list_page();
+    get_blog_list_category();
   }, [get_categories]);
 
   return (
@@ -75,7 +79,7 @@ function Blog({
 }
 const mapStateToProps = (state) => ({
   categories: state.categories.categories,
-  posts: state.blog.blog_list,
+  posts: state.blog.blog_list_category,
   count: state.blog.count,
   next: state.blog.next,
   previous: state.blog.previous,

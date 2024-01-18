@@ -28,7 +28,7 @@ function Header() {
   return (
     <main>
       <div>
-        <div className="text-center pt-60 pb-40 md:py-84 xl:pt-52 2xl:py-96 ">
+        <div className="text-center pt-60 pb-40 md:py-84 xl:py-56 2xl:py-96 ">
           <h1 className="  px-4 mb-10 xl:leading-tight text-5xl font-black tracking-tight text-black bg-opacity-70 md:text-6xl lg:text-4xl lg:px-24 xl:text-5xl xl:px-24 xl:mb-16 2xl:text-7xl 2xl:px-22 dark:text-white">
             {t("home.header.title")}{" "}
             <span className=" text-oro">
