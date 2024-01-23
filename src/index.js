@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./styles/index.css";
 import App from "./App";
 
+import store from "store";
+import { Provider } from "react-redux";
+
 import i18 from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend";
@@ -52,10 +55,12 @@ const loadingMarkup = (
 
 root.render(
   <>
-    <Suspense fallback={loadingMarkup}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Suspense>
+    <Provider store={store}>
+      <Suspense fallback={loadingMarkup}>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Suspense>
+    </Provider>
   </>
 );

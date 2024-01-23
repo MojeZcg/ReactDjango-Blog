@@ -102,4 +102,5 @@ class SearchBlogView(APIView):
         serializer = PostListSerializer(results, many=True)
         
         return paginator.get_paginated_response({'filtered_posts': serializer.data})
+    
         

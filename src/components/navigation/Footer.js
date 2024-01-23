@@ -37,7 +37,7 @@ function Footer() {
         <ul className="mt-4 mb-4 2xl:mt-6 2xl:mb-5 flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-18 2xl:gap-8 2xl:text-xl">
           {links.map((link) => (
             <li
-              key={link.key}
+              key={link.link}
               className=" cursor-pointer select-none text-sm inline-flex font-medium border-b-2 border-transparent leading-6 text-gray-900 dark:text-white  hover: border-oro mx-1 lg:mx-7 md:mx-0 md:ml-8 md:my-0 lg:text-base xl:ml-5 xl:text-base 2xl:text-lg "
             >
               <a href={link.link}>{link.name}</a>

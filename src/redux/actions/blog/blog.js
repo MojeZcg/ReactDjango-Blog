@@ -175,17 +175,17 @@ export const search_blog = (search_term) => async (dispatch) => {
 
     if (res.status === 200) {
       dispatch({
-        type: GET_BLOG_LIST_SUCCESS,
+        type: GET_SEARCH_BLOG_SUCCESS,
         payload: res.data,
       });
     } else {
       dispatch({
-        type: GET_BLOG_LIST_FAIL,
+        type: GET_SEARCH_BLOG_FAIL,
       });
     }
   } catch (error) {
     dispatch({
-      type: GET_BLOG_LIST_FAIL,
+      type: GET_SEARCH_BLOG_FAIL,
     });
   }
 };

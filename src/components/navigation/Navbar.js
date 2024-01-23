@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { useEffect, useRef, useState } from "react";
+import { connect, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 
 import { IoMenu, IoClose } from "react-icons/io5";
@@ -14,57 +14,7 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 
-function Navbar() {
-  const languages = [
-    {
-      code: "en",
-      name: "English",
-      contry_code: "us",
-    },
-    {
-      code: "es",
-      name: "Español",
-      contry_code: "es",
-    },
-  ];
-
-  const { t, i18n } = useTranslation("global");
-
-  const [nav, setNav] = useState(true);
-  const [darkmode, setDarkmode] = useState(true);
-  const [links, setLinks] = useState([]);
-  const [buttonLng, setButtonLng] = useState(true);
-
-  const currentLanguage = i18n.language;
-
-  const handleButtonLng = () => {
-    setButtonLng(!buttonLng);
-  };
-
-  const handleChangeLanguage = (code) => {
-    i18next.changeLanguage(code);
-    handleButtonLng();
-  };
-
-  useEffect(() => {
-    const updateLinks = () => {
-      const newLinks = [
-        { name: t("navbar.home"), link: "/" },
-        { name: "Blog", link: "/blog" },
-        { name: t("navbar.about"), link: "/about" },
-        { name: t("navbar.contact"), link: "/contact" },
-      ];
-      setLinks(newLinks);
-    };
-    updateLinks();
-
-    i18n.on("languageChanged", updateLinks);
-
-    return () => {
-      i18n.off("languageChanged", updateLinks);
-    };
-  }, [i18n, t]);
-
+function Navbar({ dispatch }) {
   window.onscroll = function () {
     scrollFunction();
   };
@@ -87,12 +37,83 @@ function Navbar() {
       document.getElementById("navbar").classList.remove("dark:bg-dark/70");
     }
   }
+  const languages = [
+    {
+      code: "en",
+      name: "English",
+      contry_code: "us",
+    },
+    {
+      code: "es",
+      name: "Español",
+      contry_code: "es",
+    },
+  ];
+
+  const { t, i18n } = useTranslation("global");
+
+  const [nav, setNav] = useState(true);
+  const [links, setLinks] = useState([]);
+  const [buttonLng, setButtonLng] = useState(true);
+
+  const myInputRef = useRef(null);
+
+  const handleButtonLng = () => {
+    setButtonLng(!buttonLng);
+  };
+
+  const darkmode = useSelector((state) => state.appReducer.darkmode);
+  const currentLanguage = useSelector(
+    (state) => state.appReducer.currentLanguage
+  );
+  const handleDarkmode = () => {
+    dispatch({ type: "TOGGLE_DARKMODE" });
+  };
+
+  const handleChangeLanguage = (code) => {
+    dispatch({ type: "CHANGE_LANGUAGE", payload: code });
+    i18next.changeLanguage(code);
+  };
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   useEffect(() => {
+    const updateLinks = () => {
+      const newLinks = [
+        { name: t("navbar.home"), link: "/" },
+        { name: "Blog", link: "/blog" },
+        { name: t("navbar.about"), link: "/about" },
+        { name: t("navbar.contact"), link: "/contact" },
+      ];
+      setLinks(newLinks);
+    };
+    updateLinks();
+
+    i18n.on("languageChanged", updateLinks);
+
+    return () => {
+      i18n.off("languageChanged", updateLinks);
+    };
+  }, [i18n, t]);
+
+  const handleClickOutside = (event) => {
+    if (myInputRef.current && !myInputRef.current.contains(event.target)) {
+      setButtonLng(true);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [buttonLng]);
+
+  useEffect(() => {
+    // Aplicar la clase "dark" al elemento html según el estado de darkmode
     if (darkmode) {
       document.querySelector("html").classList.add("dark");
     } else {
@@ -100,20 +121,17 @@ function Navbar() {
     }
   }, [darkmode]);
 
-  const handleDarkmode = () => {
-    setDarkmode(!darkmode);
-  };
-
   return (
     <nav
       id="navbar"
-      className="w-full shadow-sm  shadow-black/40 dark:shadow-white/40 bg-white dark:bg-dark transition duration-300 ease-in-out fixed z-50"
+      className="w-full shadow-sm  shadow-black/40 dark:shadow-white/40 bg-white dark:bg-dark transition-all duration-500 ease-in-out fixed z-50"
     >
       <div className=" flex items-center px-0 mx-0 py-4 sm:px-5 xl:py-2 2xl:py-4 ">
         <div className="relative inline-block text-left">
           <button
             type="button"
             onClick={handleButtonLng}
+            ref={myInputRef}
             className={` hidden md:inline-flex  items-center justify-center w-16 h-10 2xl:w-20 2xl:h-12 text-base 2xl:text-xl bg-transparent border-2 hover:border-2 focus:border-2 border-black dark:border-white text-black dark:text-white rounded-md`}
           >
             <span
@@ -172,7 +190,7 @@ function Navbar() {
               <div className="hidden lg:flex">
                 {links.map((link) => (
                   <NavLink
-                    key={link.key}
+                    key={link.link}
                     to={link.link}
                     className="  cursor-pointer select-none text-lg inline-flex font-medium border-b-2 border-transparent leading-6 text-gray-900 dark:text-white  hover: border-oro mx-1 lg:mx-7 md:mx-0 md:ml-8 md:my-0 lg:text-base xl:ml-5 xl:text-base 2xl:text-xl"
                   >
@@ -208,7 +226,7 @@ function Navbar() {
                 focus:border-2 
                 focus:border-oro
                 focus:bg-transparent
-                transition duration-300 ease-in-out 
+                transition-all duration-300 ease-in-out 
                 xl:text-base 
                 xl:py-2
                 xl:px-5
@@ -241,7 +259,7 @@ function Navbar() {
             <div className="w-full text-3xl  ">
               <ul className="last:border-b-2 border-oro">
                 {links.map((link) => (
-                  <li key={link.id}>
+                  <li key={link.link}>
                     <NavLink
                       to={link.link}
                       className="py-5 px-4 m-0 w-full cursor-pointer items-center select-none  inline-flex font-medium border-l-2 border-oro leading-8 text-2xl text-black dark:text-white "
@@ -259,6 +277,10 @@ function Navbar() {
   );
 }
 
-const mapStateToProp = (state) => ({});
+const mapStateToProps = (state) => ({
+  darkmode: state.darkmode,
+  currentLanguage: state.currentLanguage,
+});
 
-export default connect(mapStateToProp, {})(Navbar);
+// Conecta el componente Navbar al estado global
+export default connect(mapStateToProps)(Navbar);

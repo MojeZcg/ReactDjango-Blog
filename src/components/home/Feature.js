@@ -49,7 +49,7 @@ function Feature() {
             </p>
 
             <a
-              href="#"
+              href="/"
               className="inline-flex p-2 text-oro capitalize bg-oro/20 duration-200 transform  rounded-full transition duration-400 ease-in-out hover:text-black dark:hover:text-white hover:bg-transparent "
             >
               <svg
@@ -96,7 +96,7 @@ function Feature() {
             </p>
 
             <a
-              href="#"
+              href="/"
               className="inline-flex mt-4 p-2 text-oro capitalize bg-oro/20 duration-200 transform  rounded-full transition duration-400 ease-in-out hover:text-black dark:hover:text-white hover:bg-transparent "
             >
               <svg
@@ -143,7 +143,7 @@ function Feature() {
             </p>
 
             <a
-              href="#"
+              href="/"
               className="inline-flex p-2 text-oro capitalize bg-oro/20 duration-200 transform  rounded-full transition duration-400 ease-in-out hover:text-black dark:hover:text-white focus:text-oro hover:bg-transparent "
             >
               <svg

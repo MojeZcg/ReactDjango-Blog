@@ -23,22 +23,6 @@ export default function blog(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case GET_BLOG_LIST_CATEGORIES_SUCCESS:
-      return {
-        ...state,
-        blog_list_category: payload.results.posts,
-        count: payload.count,
-        next: payload.next,
-        previous: payload.previous,
-      };
-    case GET_BLOG_LIST_CATEGORIES_FAIL:
-      return {
-        ...state,
-        blog_list_category: null,
-        count: null,
-        next: null,
-        previous: null,
-      };
     case GET_BLOG_LIST_SUCCESS:
       return {
         ...state,
@@ -51,6 +35,22 @@ export default function blog(state = initialState, action) {
       return {
         ...state,
         blog_list: null,
+        count: null,
+        next: null,
+        previous: null,
+      };
+    case GET_BLOG_LIST_CATEGORIES_SUCCESS:
+      return {
+        ...state,
+        blog_list_category: payload.results.posts_by_category,
+        count: payload.count,
+        next: payload.next,
+        previous: payload.previous,
+      };
+    case GET_BLOG_LIST_CATEGORIES_FAIL:
+      return {
+        ...state,
+        blog_list_category: null,
         count: null,
         next: null,
         previous: null,
