@@ -154,7 +154,8 @@ REST_FRAMEWORKS = {
 CORS_ORIGINS_WHITELIST = env.list('CORS_ORIGINS_WHITELIST_DEV')
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  
+    "http://localhost:3000", 
+    "http://localhost:8000"
 ]
 
 CORS_ALLOW_METHODS = [

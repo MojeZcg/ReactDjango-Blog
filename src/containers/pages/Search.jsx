@@ -25,7 +25,7 @@ function Search({ categories, posts, count, next, previous, search_blog }) {
   return (
     <Layout>
       <Helmet>
-        <title>MojeZcg | Search</title>
+        <title>MojeZcg | {term}</title>
         <meta
           name="description"
           content="Blog sobre actualidad en software y marketing digital. Crea articulos inspiradores para la comunidad. Blog about current software and digital marketing. Create inspiring articles for the community."

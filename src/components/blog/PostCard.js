@@ -1,27 +1,37 @@
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 export default function PostCard({ data }) {
   return (
-    <Link className="bg-transparent border-2 border-black/60 dark:border-white/40 hover:border-black hover:dark:border-white w-full h-64 rounded-2xl flex  items-center justify-between dark:text-white font-Main ">
-      <img
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdifundir.org%2Fwp-content%2Fuploads%2F2018%2F02%2Fmorning_picdump_2745_640_22.jpg&f=1&nofb=1&ipt=e1bf4cd095c96026329d8549ba459411fac365718de4cd72f05ab30030aa5f0e&ipo=images"
-        className="h-60 pl-1 rounded-2xl p-0"
-        alt="Post"
-      />
-      <div className="flex flex-col justify-between w-10/12 ">
-        <h3 className="px-8 pt-8 pb-2 text-5xl">Title</h3>
-        <h5 className=" text-gray-800 px-8 pb-6 text-lg">Subtitle</h5>
-        <div className="px-8 pb-6 overflow-hidden">
-          <p className="text-gray-600 text-sm  line-clamp-3 max-w-full">
-            contenido contenido contenido contenido contenido contenido
-            contenido contenido contenido contenido contenido contenido
-            contenido contenido contenido contenido contenido contenido
-            contenido contenido contenido contenido contenido contenido
-            contenido contenidofdasfadfadsfdasfasfadfd afasfafaf a
-            fasfasfasdfasfas fafafad
+    <Link className="bg-transparent border-2  border-black/60 dark:border-white/40 hover:border-black hover:dark:border-white w-full h-64 rounded-2xl flex items-center justify-between dark:text-white font-Main ">
+      <div className="flex flex-col justify-between w-[62%] px-7">
+        <h3 className=" mb-2 text-4xl font-semibold truncate max-w-full ">
+          {data.title}
+        </h3>
+        <div className=" pb-6 gap-10 flex justify-between   ">
+          <h5 className="text-slate-800 text-lg font-extrabold items-start">
+            {data.category.name}
+          </h5>
+          <div className="flex justify-end gap-7">
+            <h5 className="text-base text-slate-600">
+              {data.time_read} min to read
+            </h5>
+            <h5 className="text-base text-slate-800">
+              {moment(data.published).format("ll")}
+            </h5>
+          </div>
+        </div>
+        <div className=" overflow-hidden">
+          <p className="text-gray-600 text-base line-clamp-3 max-w-full">
+            {data.description}
           </p>
         </div>
       </div>
+      <img
+        src={`http://127.0.0.1:8000${data.thumbnail}`}
+        className=" p-0 object-contain h-64 max-w-full rounded-e-2xl "
+        alt="Post"
+      />
     </Link>
   );
 }

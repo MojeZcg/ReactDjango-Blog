@@ -24,7 +24,7 @@ class BlogListView(APIView):
 
             return paginator.get_paginated_response({'posts': serializer.data})
         else:
-            return Response({'error': 'no post found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'No post found'}, status=status.HTTP_404_NOT_FOUND)
 
 class ListByCategoryView(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -61,7 +61,7 @@ class ListByCategoryView(APIView):
 
             return paginator.get_paginated_response({'posts_by_category': serializer.data})
         else:
-            return Response({'error': 'no post found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'No post found'}, status=status.HTTP_404_NOT_FOUND)
         
 class PostDetailView(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -85,7 +85,7 @@ class PostDetailView(APIView):
                 
             return Response({'post': serializer.data}, status=status.HTTP_200_OK)
         else:
-            return Response({'error': 'no post found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'No post found'}, status=status.HTTP_404_NOT_FOUND)
     
 class SearchBlogView(APIView):
     permission_classes = (permissions.AllowAny,)

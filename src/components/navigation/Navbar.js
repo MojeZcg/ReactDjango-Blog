@@ -40,12 +40,14 @@ function Navbar({ dispatch }) {
   const languages = [
     {
       code: "en",
-      name: "English",
+      en: "English",
+      es: "Inglés",
       contry_code: "us",
     },
     {
       code: "es",
-      name: "Español",
+      es: "Español",
+      en: "Spanish",
       contry_code: "es",
     },
   ];
@@ -132,7 +134,7 @@ function Navbar({ dispatch }) {
             type="button"
             onClick={handleButtonLng}
             ref={myInputRef}
-            className={` hidden md:inline-flex  items-center justify-center w-16 h-10 2xl:w-20 2xl:h-12 text-base 2xl:text-xl bg-transparent border-2 hover:border-2 focus:border-2 border-black dark:border-white text-black dark:text-white rounded-md`}
+            className={` hidden md:inline-flex  items-center justify-center w-16 h-10 2xl:w-20 2xl:h-12 text-base 2xl:text-xl bg-transparent border-2 hover:border-2 focus:border-2 border-black dark:border-white text-black dark:text-white rounded-md font-semibold`}
           >
             <span
               className={`fi fi-${
@@ -149,19 +151,21 @@ function Navbar({ dispatch }) {
             } rounded-lg shadow-lg text-md`}
           >
             <ul className={buttonLng ? "hidden" : "block"}>
-              {languages.map(({ code, name, contry_code }) => (
+              {languages.map(({ code, en, es, contry_code }) => (
                 <li
                   key={contry_code}
                   className="flex items-center justify-center"
                 >
                   <button
                     onClick={() => handleChangeLanguage(code)}
-                    className="h-full w-22 py-1 text-black dark:text-white "
+                    className="h-full w-32 py-1 text-black font-semibold dark:text-white flex flex-row items-center"
                   >
-                    <span
-                      className={`fi fi-${contry_code} mr-1 rounded-sm py-2 px-3`}
-                    ></span>
-                    {name}
+                    <div className=" pl-3">
+                      <span
+                        className={`fi fi-${contry_code} mr-1 rounded-sm py-2 px-3`}
+                      ></span>
+                    </div>
+                    {currentLanguage === "en" ? en : es}
                   </button>
                 </li>
               ))}
@@ -183,7 +187,12 @@ function Navbar({ dispatch }) {
               className="w-12 2xl:h-16 hidden dark:block"
               alt="Logo"
             />
-            <span className=" pl-1 dark:text-white text-3xl">React</span>
+            <span
+              className=" pl-1 dark:text-white text-3xl font-semibold
+            "
+            >
+              React
+            </span>
           </Link>
           <div className="flex justify-end">
             <div className=" left-0 mt-0 flex flex-shrink-0 justify-center items-center md:z-auto z-[-1]">
