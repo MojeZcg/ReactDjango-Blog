@@ -27,11 +27,13 @@ export default function PostCard({ data }) {
           </p>
         </div>
       </div>
-      <img
-        src={`http://127.0.0.1:8000${data.thumbnail}`}
-        className=" p-0 object-contain h-64 max-w-full rounded-e-2xl "
-        alt="Post"
-      />
+      <div className="flex items-center justify-center bg-gray-100 rounded-r-2xl overflow-hidden h-64 -z-10 max-w-sm ">
+        <img
+          src={`http://127.0.0.1:8000${data.thumbnail}`}
+          className=" p-0 object-cover max-w-full   "
+          alt="Post"
+        />
+      </div>
     </Link>
   );
 }
