@@ -2,6 +2,7 @@ import Navbar from "components/navigation/Navbar";
 import Footer from "components/navigation/Footer";
 import Layout from "hocs/layouts/Layout";
 import { Helmet } from "react-helmet-async";
+import AboutUs from "components/about/AboutUs";
 
 function About() {
   return (
@@ -44,7 +45,9 @@ function About() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Navbar />
-      <div className="pt-24"></div>
+      <div className="pt-18">
+        <AboutUs />
+      </div>
       <Footer />
     </Layout>
   );

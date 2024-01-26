@@ -49,7 +49,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
         );
       } else {
         content = (
-          <div
+          <button
             key={i}
             onClick={() => visitPage(page)}
             className={`hidden md:-mt-px md:flex`}
@@ -57,7 +57,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
             <div className="cursor-pointer border-transparent border-t px-2 inline-flex items-center text-xl font-semibold">
               {pageNumber}
             </div>
-          </div>
+          </button>
         );
       }
 
@@ -69,9 +69,9 @@ export default function SmaillSetPagination({ list_page, list, count }) {
   return (
     <div className="flex items-center justify-center">
       {currentPage !== 1 ? (
-        <div onClick={() => previous_number()}>
+        <button onClick={() => previous_number()}>
           <FaArrowLeft className="h-5 w-5" />
-        </div>
+        </button>
       ) : (
         ""
       )}
@@ -80,9 +80,9 @@ export default function SmaillSetPagination({ list_page, list, count }) {
       {numbers.length === 0 || currentPage === numbers.length ? (
         ""
       ) : (
-        <div onClick={() => next_number()}>
+        <button onClick={() => next_number()}>
           <FaArrowRight className="h-5 w-5" />
-        </div>
+        </button>
       )}
     </div>
   );

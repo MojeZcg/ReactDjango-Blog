@@ -4,11 +4,11 @@ import moment from "moment";
 export default function PostCard({ data }) {
   return (
     <Link className="bg-transparent border-2  border-black/60 dark:border-white/40 hover:border-black hover:dark:border-white w-full h-64 rounded-2xl flex items-center justify-between dark:text-white font-Main ">
-      <div className="flex flex-col justify-between w-[62%] px-7">
+      <div className="flex flex-col justify-between w-8/12 px-7">
         <h3 className=" mb-2 text-4xl font-semibold truncate max-w-full ">
           {data.title}
         </h3>
-        <div className=" pb-6 gap-10 flex justify-between   ">
+        <div className=" pb-6 gap-10 flex justify-between text-center  ">
           <h5 className="text-slate-800 text-lg font-extrabold items-start">
             {data.category.name}
           </h5>

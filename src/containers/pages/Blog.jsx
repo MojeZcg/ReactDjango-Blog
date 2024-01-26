@@ -68,7 +68,7 @@ function Blog({
       </Helmet>
       <Navbar />
       <div className="pt-16">
-        <ByCategory categories={categories && categories} />
+        <ByCategory categories={categories} />
         <BlogList
           posts={posts}
           get_blog_list_page={get_blog_list_page}
