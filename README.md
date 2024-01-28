@@ -1,9 +1,10 @@
 # React-Django Blog: A Dynamic Multilingual Experience with Dark Mode and Responsive Design
 
-## Overview:
-
-This project showcases a modern and responsive blog page created using React and Django. The blog incorporates key features such as Dark Mode for enhanced readability, ensuring a pleasant user experience across different devices.
-
+> [!NOTE]
+>## Overview:
+>
+>This project showcases a modern and responsive blog page created using React and Django. The blog incorporates key features such as Dark Mode for enhanced readability, ensuring a pleasant user experience across different devices.
+>
 ## Features:
 
 - Dark Mode: Enjoy a visually comfortable reading experience in low-light environments with the Dark Mode feature.
@@ -17,13 +18,14 @@ This project showcases a modern and responsive blog page created using React and
 - Styling: Tailwind CSS
 - Internationalization: i18next for language translation
 
-## Prerequisites
-
-Make sure you have the following tools installed before running the project:
-
-- Python 3.x
-- Node.js
-- npm (installed automatically with Node.js)
+> [!IMPORTANT]
+>## Prerequisites
+>
+>Make sure you have the following tools installed before running the project:
+>
+>- Python 3.x
+>- Node.js
+>- npm (installed automatically with Node.js)
 
 ## Project Setup
 
@@ -53,53 +55,53 @@ npm install
 ```bash
 npm run build
 ```
-
-## Running the Application
-
-#### Start the Django server with the virtualenv activated:
-
-```bash
-python manage.py runserver
-```
-
-#### or Start the React development server :
-
-```bash
-npm run start
-```
-
-The application will be available at http://localhost:8000/ (or "http://localhost:3000/" with React dev Server).
-
-## Environment configuration
-
-1. Copy the `.env.example` file and rename it to `.env`.
-2. Fill in the environment variables in the `.env` file as necessary.
+> [!IMPORTANT]
+>## Running the Application
+>
+>#### Start the Django server with the virtualenv activated:
+>
+>```bash
+>python manage.py runserver
+>```
+>
+>#### or Start the React development server :
+>
+>```bash
+>npm run start
+>```
+>
+>The application will be available at http://localhost:8000/ (or "http://localhost:3000/" with React dev Server).
+>
+>## Environment configuration
+>
+>1. Copy the `.env.example` file and rename it to `.env`.
+>2. Fill in the environment variables in the `.env` file as necessary.
 
 ## Contributions
-
-### If you want to contribute to this project, follow these steps:
-
-#### 1. Create a branch for your feature or bug fix:
-
-```bash
-git checkout -b your-branch-name
-```
-
-#### 2. Make your changes and commit:
-
-```bash
-git add .
-git commit -m "Description of your changes"
-```
-
-#### 3. Push your changes to the repository:
-
-```bash
-git push origin your-branch-name
-```
-
-#### 4. Open a pull request on GitHub.
-
+> [!NOTE]
+>### If you want to contribute to this project, follow these steps:
+>
+>#### 1. Create a branch for your feature or bug fix:
+>
+>```bash
+>git checkout -b your-branch-name
+>```
+>
+>#### 2. Make your changes and commit:
+>
+>```bash
+>git add .
+>git commit -m "Description of your changes"
+>```
+>
+>#### 3. Push your changes to the repository:
+>
+>```bash
+>git push origin your-branch-name
+>```
+>
+>#### 4. Open a pull request on GitHub.
+>
 ## Contact
 
 For questions or issues, contact me via [Email](https://mail.google.com/mail/u/0/?fs=1&to=jsmonte31@gmail.com&su=Contact+me&tf=cm).
