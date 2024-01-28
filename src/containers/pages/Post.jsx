@@ -30,6 +30,7 @@ function Post({ get_blog, post }) {
             <img
               src={`${process.env.REACT_APP_API_URL}${post.thumbnail}`}
               className="w-full "
+              alt={post.slug}
             />
           </div>
           <div className="pt-16 px-16">
