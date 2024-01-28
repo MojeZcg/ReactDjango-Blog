@@ -1,7 +1,14 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-export default function SmaillSetPagination({ list_page, list, count }) {
+export default function SmaillSetPaginationSearch({
+  list_page,
+  term,
+  list,
+  count,
+}) {
+  const { t } = useTranslation("global");
   const [active, setActive] = useState(1);
   const [listingPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
@@ -9,14 +16,14 @@ export default function SmaillSetPagination({ list_page, list, count }) {
   const visitPage = (page) => {
     setCurrentPage(page);
     setActive(page);
-    list_page(page);
+    list_page(term, page);
   };
 
   const previous_number = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
       setActive(currentPage - 1);
-      list_page(currentPage - 1);
+      list_page(term, currentPage - 1);
     }
   };
 
@@ -24,7 +31,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
     if (currentPage !== Math.ceil(list.lenght / 3)) {
       setCurrentPage(currentPage + 1);
       setActive(currentPage + 1);
-      list_page(currentPage + 1);
+      list_page(term, currentPage + 1);
     }
   };
 
@@ -46,7 +53,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
               key={i}
               className={`hidden md:flex items-center justify-center h-auto w-8`}
             >
-              <div className="flex h-9 w-9  items-center justify-center text-sm text-black dark:text-white transition-all border border-t-black dark:border-t-white border-transparent duration-300 ease-in-out">
+              <div className="flex h-9 w-9  items-center justify-center text-base text-black border-tblack  transition-all border border-t-black border-transparent duration-300 ease-in-out">
                 {pageNumber}
               </div>
             </div>
@@ -60,7 +67,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
               onClick={() => visitPage(page)}
               className={`hidden  md:flex items-center justify-center `}
             >
-              <div className="flex h-9 w-9 rounded-md items-center border border-transparent justify-center text-sm text-black hover:bg-neutral-200 hover:border-black transition-all duration-300 ease-in-out  dark:text-white dark:hover:bg-neutral-950  dark:hover:border-white">
+              <div className="flex h-9 w-9 rounded-md items-center border border-transparent justify-center text-sm hover:text-neutral-700 hover:bg-neutral-100 hover:border-neutral-600 transition-all duration-300 ease-in-out">
                 {pageNumber}
               </div>
             </button>
@@ -81,11 +88,11 @@ export default function SmaillSetPagination({ list_page, list, count }) {
             <div className="flex items-center justify-center pr-3 h-8 w-26">
               <button
                 onClick={() => previous_number()}
-                className="relative block rounded bg-transparent px-3 py-2 border border-gray-700 hover:border-black  hover:text-black text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:border-neutral-200 dark:hover:bg-neutral-950 dark:hover:text-white"
+                className="relative block rounded bg-transparent border border-gray-400 px-3 py-2 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
               >
                 <div className="flex items-center justify-center gap-2">
                   <FaArrowLeft className="" />
-                  Previous
+                  {t("previous")}
                 </div>
               </button>
             </div>
@@ -101,10 +108,10 @@ export default function SmaillSetPagination({ list_page, list, count }) {
             <div className=" items-center justify-center pl-3 h-8 w-26">
               <button
                 onClick={() => next_number()}
-                className="relative block rounded bg-transparent px-3 py-2 border border-gray-700 hover:border-black  hover:text-black text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:border-neutral-200 dark:hover:bg-neutral-950 dark:hover:text-white"
+                className="relative block rounded bg-transparent px-3 py-2 border border-gray-400 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
               >
-                <div className="flex items-center justify-center gap-2 dark:text-white">
-                  Next
+                <div className="flex items-center justify-center gap-2">
+                  {t("next")}
                   <FaArrowRight className="" />
                 </div>
               </button>

@@ -78,4 +78,7 @@ export const EN = {
   footer: {
     slogan: "Blog for Everyone",
   },
+  results: "Results",
+  next: "Next",
+  previous: "Previous",
 };

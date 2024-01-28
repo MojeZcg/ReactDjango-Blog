@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="bg-gray-100 py-8">
       <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div className="max-w-lg">
@@ -20,14 +20,13 @@ export default function AboutUs() {
                 href="/about"
                 className="text-blue-500 hover:text-blue-600 font-medium"
               >
-                Learn more about us
-                <span className="ml-2">&#8594;</span>
+                Learn more about us{/* */} <span className="ml-2">&#8594;</span>
               </a>
             </div>
           </div>
           <div className="mt-12 md:mt-0">
             <img
-              src="https://images.unsplash.com/photo-1531973576160-7125cd663d86"
+              src="https://node4.web3img.com/2024/01/26/photo.jpg"
               alt="About Us"
               className="object-cover rounded-lg shadow-md"
             />

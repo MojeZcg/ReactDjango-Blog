@@ -79,7 +79,7 @@ export const get_blog_list_page = (page) => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/blog/list?${page}`,
+      `${process.env.REACT_APP_API_URL}/api/blog/list?p=${page}`,
       config
     );
 

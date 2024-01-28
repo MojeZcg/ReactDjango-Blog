@@ -8,6 +8,7 @@ import Contact from "containers/pages/Contact";
 import Blog from "containers/pages/Blog";
 import Category from "containers/pages/Category";
 import Search from "containers/pages/Search";
+import Post from "containers/pages/Post";
 
 function App() {
   return (
@@ -59,8 +60,9 @@ function App() {
 
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/search/:term" element={<Search />} />
           <Route path="/blog/:slug" element={<Category />} />
+          <Route path="/search/:term" element={<Search />} />
+          <Route path="/post/:slug" element={<Post />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>

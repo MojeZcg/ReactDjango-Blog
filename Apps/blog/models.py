@@ -7,7 +7,7 @@ from apps.category.models import Category
 # Create your models here.
 
 def blog_thumbnail_directory(instance, filename):
-    return 'blog/{0}/{1}'.format(instance.title, filename)
+    return 'blog/{0}/{1}'.format(instance.slug, filename)
 
 class Post(models.Model):
     
@@ -23,7 +23,7 @@ class Post(models.Model):
     
     title =         models.CharField(max_length=255)
     slug =          models.SlugField(max_length=255)
-    thumbnail =     models.ImageField(upload_to=blog_thumbnail_directory, max_length=500)
+    thumbnail =     models.ImageField(upload_to=blog_thumbnail_directory, max_length=500) 
 
     description =   models.TextField(max_length=255)
     content =       RichTextField()

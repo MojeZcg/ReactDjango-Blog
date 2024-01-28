@@ -10,7 +10,7 @@ function Home() {
   return (
     <Layout>
       <Navbar />
-      <div className="bg-gradient-secundary dark:bg-gradient-dark bg-opacity-50 pt-22">
+      <div className="bg-gradient-secundary dark:bg-gradient-dark bg-opacity-50 pt-16">
         <Header />
         <DescriptionCards />
         <Feature />

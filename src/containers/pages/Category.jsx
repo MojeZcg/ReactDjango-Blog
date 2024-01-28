@@ -79,8 +79,12 @@ function Category({
       </Helmet>
       <Navbar />
       <div className="pt-16">
-        <ByCategory categories={categories && categories} />
-        <BlogList posts={posts} />
+        <ByCategory categories={categories} />
+        <BlogList
+          posts={posts}
+          list_page={get_blog_list_category_page}
+          count={count}
+        />
       </div>
       <Footer />
     </Layout>

@@ -73,9 +73,12 @@ export const ES = {
     title: "Empieza a crear.",
     subtitle:
       "Descubre un mundo de posibilidades creativas con nuestra guía completa 'Empieza a crear'. Desde inspiración hasta técnicas expertas, encuentra el impulso que necesitas para materializar tus ideas y alcanzar nuevos niveles de creatividad. ¡Da rienda suelta a tu imaginación hoy mismo!",
-    button: "Iniciate Hoy",
+    button: "Inicia Hoy",
   },
   footer: {
     slogan: "Blog para Todos",
   },
+  results: "Resultados",
+  next: "Siguiente",
+  previous: "Anterior",
 };

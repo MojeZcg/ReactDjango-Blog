@@ -69,11 +69,7 @@ function Blog({
       <Navbar />
       <div className="pt-16">
         <ByCategory categories={categories} />
-        <BlogList
-          posts={posts}
-          get_blog_list_page={get_blog_list_page}
-          count={count}
-        />
+        <BlogList posts={posts} list_page={get_blog_list_page} count={count} />
       </div>
       <Footer />
     </Layout>

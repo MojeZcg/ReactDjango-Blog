@@ -45,7 +45,7 @@ function About() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Navbar />
-      <div className="pt-18">
+      <div className="pt-16">
         <AboutUs />
       </div>
       <Footer />

@@ -8,11 +8,19 @@ import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { Helmet } from "react-helmet-async";
 
-import { search_blog } from "redux/actions/blog/blog";
+import { search_blog, search_blog_page } from "redux/actions/blog/blog";
 import { get_categories } from "redux/actions/categories/categories";
 import BlogList from "components/blog/BlogList";
 
-function Search({ categories, posts, count, next, previous, search_blog }) {
+function Search({
+  categories,
+  posts,
+  count,
+  next,
+  previous,
+  search_blog,
+  search_blog_page,
+}) {
   const params = useParams();
   const term = params.term;
 
@@ -64,7 +72,12 @@ function Search({ categories, posts, count, next, previous, search_blog }) {
       <Navbar />
       <div className="pt-16">
         <ByCategory categories={categories} />
-        <BlogList posts={posts} />
+        <BlogList
+          posts={posts}
+          list_page={search_blog_page}
+          term={term}
+          count={count}
+        />
       </div>
       <Footer />
     </Layout>
@@ -81,4 +94,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   get_categories,
   search_blog,
+  search_blog_page,
 })(Search);

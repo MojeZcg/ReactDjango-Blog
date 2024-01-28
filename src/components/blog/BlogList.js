@@ -1,21 +1,40 @@
 import SmaillSetPagination from "components/pagination/SmallSetPagination";
 import PostCard from "./PostCard";
+import { useLocation } from "react-router-dom";
+import SmaillSetPaginationSearch from "components/pagination/SmallSetPaginationSearch";
+import { useTranslation } from "react-i18next";
 
-export default function BlogList({ posts, get_blog_list_page, count }) {
+export default function BlogList({ posts, term, list_page, count }) {
+  const { t } = useTranslation("global");
+  const location = useLocation();
   return (
     <div className="mb-5">
-      <ul className=" border-t border-gray-300 dark:border-slate-700 ">
+      <ul className=" border-t border-gray-300 dark:border-slate-700 px-16 ">
         {posts?.map((post) => (
-          <li key={post.id} className="px-16 py-2 first:mt-3 last:mb-10">
+          <li key={post.id} className=" py-2 first:mt-3 last:mb-10">
             <PostCard data={post} />
           </li>
         ))}
       </ul>
-      <SmaillSetPagination
-        list_page={get_blog_list_page}
-        list={posts}
-        count={count}
-      />
+      <div className=" flex items-center justify-between pr-10">
+        <div className="ml-16 dark:text-white border dark:border-neutral-600 border-neutral-500 py-1 px-3 rounded-lg text-md">
+          {count + " " + t("results")}
+        </div>
+        {/^\/search\//.test(location.pathname) ? (
+          <SmaillSetPaginationSearch
+            list_page={list_page}
+            term={term}
+            list={posts}
+            count={count}
+          />
+        ) : (
+          <SmaillSetPagination
+            list_page={list_page}
+            list={posts}
+            count={count}
+          />
+        )}
+      </div>
     </div>
   );
 }
