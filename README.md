@@ -18,7 +18,7 @@
 - Styling: Tailwind CSS
 - Internationalization: i18next for language translation
 
-> [!IMPORTANT]
+> [!WARNING]
 >## Prerequisites
 >
 >Make sure you have the following tools installed before running the project:
@@ -27,35 +27,36 @@
 >- Node.js
 >- npm (installed automatically with Node.js)
 
-## Project Setup
-
-#### 1. Clone this repository:
-
-```bash
-git clone https://github.com/MojeZcg/ReactDjango-Blog
-cd ReactDjango-Blog
-```
-
-#### 2. Set up the virtual environment and Python dependencies:
-
-```bash
-python -m venv venv
-source venv/bin/activate (or "venv\Scripts\activate" on Windows)
-pip install -r requirements.txt
-```
-
-#### 3. Set up Node.js dependencies:
-
-```bash
-npm install
-```
-
-#### 4. Set up the build for the django server:
-
-```bash
-npm run build
-```
 > [!IMPORTANT]
+>## Project Setup
+>
+>#### 1. Clone this repository:
+>
+>```bash
+>git clone https://github.com/MojeZcg/ReactDjango-Blog
+>cd ReactDjango-Blog
+>```
+>
+>#### 2. Set up the virtual environment and Python dependencies:
+>
+>```bash
+>python -m venv venv
+>source venv/bin/activate (or "venv\Scripts\activate" on Windows)
+>pip install -r requirements.txt
+>```
+>
+>#### 3. Set up Node.js dependencies:
+>
+>```bash
+>npm install
+>```
+>
+>#### 4. Set up the build for the django server:
+>
+>```bash
+>npm run build
+>```
+>
 >## Running the Application
 >
 >#### Start the Django server with the virtualenv activated:
