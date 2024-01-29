@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 export default function CTA() {
-  const { t } = useTranslation("global");
+  const { t } = useTranslation("home");
 
   return (
     <section className=" w-full flex items-center justify-center">

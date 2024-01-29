@@ -5,7 +5,7 @@ import { IoMdDocument } from "react-icons/io";
 import { FaPencil } from "react-icons/fa6";
 
 export default function DescriptionCards() {
-  const { t } = useTranslation("global");
+  const { t } = useTranslation("home");
 
   return (
     <section className="relative w-full">

@@ -3,6 +3,8 @@ import Footer from "components/navigation/Footer";
 import Layout from "hocs/layouts/Layout";
 import { Helmet } from "react-helmet-async";
 
+import ContactForm from "components/contact/ContactForm";
+
 function Contact() {
   return (
     <Layout>
@@ -44,7 +46,9 @@ function Contact() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Navbar />
-      <div className="pt-24"></div>
+      <div className="pt-16">
+        <ContactForm />
+      </div>
       <Footer />
     </Layout>
   );

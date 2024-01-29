@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 export default function PostCard({ data }) {
+  const { t } = useTranslation("blog");
+
   return (
     <div className="border border-black/60 dark:border-white/70 hover:border-black hover:dark:border-white rounded-2xl">
       <Link
@@ -13,20 +16,20 @@ export default function PostCard({ data }) {
             {data.title}
           </h3>
           <div className=" pb-6 gap-10 flex justify-between text-center  ">
-            <h5 className="text-slate-800 text-lg font-extrabold items-start">
+            <h5 className="text-slate-800 dark:text-slate-300 text-lg font-extrabold items-start">
               {data.category.name}
             </h5>
             <div className="flex justify-end gap-7">
-              <h5 className="text-base text-slate-600">
-                {data.time_read} min to read
+              <h5 className="text-base text-slate-600 dark:text-slate-300">
+                {data.time_read + " " + t("time_read")}
               </h5>
-              <h5 className="text-base text-slate-800">
+              <h5 className="text-base text-slate-800 dark:text-slate-200">
                 {moment(data.published).format("ll")}
               </h5>
             </div>
           </div>
           <div className=" overflow-hidden">
-            <p className="text-gray-600 text-base line-clamp-3 max-w-full">
+            <p className="text-gray-600 dark:text-slate-400 text-base line-clamp-3 max-w-full">
               {data.description}
             </p>
           </div>

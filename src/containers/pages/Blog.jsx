@@ -67,7 +67,7 @@ function Blog({
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Navbar />
-      <div className="pt-16">
+      <div className="pt-16 2xl:pt-24">
         <ByCategory categories={categories} />
         <BlogList posts={posts} list_page={get_blog_list_page} count={count} />
       </div>

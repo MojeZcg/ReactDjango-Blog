@@ -8,7 +8,7 @@ export default function SmaillSetPaginationSearch({
   list,
   count,
 }) {
-  const { t } = useTranslation("global");
+  const { t } = useTranslation("blog");
   const [active, setActive] = useState(1);
   const [listingPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);

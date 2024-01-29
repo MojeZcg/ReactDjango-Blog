@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 function Feature() {
-  const { t } = useTranslation("global");
+  const { t } = useTranslation("home");
 
   return (
     <section className="w-full">

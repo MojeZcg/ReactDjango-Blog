@@ -5,10 +5,10 @@ import SmaillSetPaginationSearch from "components/pagination/SmallSetPaginationS
 import { useTranslation } from "react-i18next";
 
 export default function BlogList({ posts, term, list_page, count }) {
-  const { t } = useTranslation("global");
+  const { t } = useTranslation("blog");
   const location = useLocation();
   return (
-    <div className="mb-5">
+    <div className="mb-5 dark:bg-neutral-950">
       <ul className=" border-t border-gray-300 dark:border-slate-700 px-16 ">
         {posts?.map((post) => (
           <li key={post.id} className=" py-2 first:mt-3 last:mb-10">

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { connect } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 function Footer() {
-  const { t, i18n } = useTranslation("global");
-
+  const { t, i18n } = useTranslation("home");
+  const location = useLocation();
   const [links, setLinks] = useState([]);
 
   useEffect(() => {
@@ -27,10 +28,16 @@ function Footer() {
   }, [i18n, t]);
 
   return (
-    <footer className=" relative ">
-      <div className="bg-black dark:bg-white opacity-60 h-[1px] w-[95%] rounded-md absolute left-[2.5%]"></div>
-      <div className="mx-auto max-w-full pt-4 2xl:pt-6 px-4 pb-6 sm:px-6 lg:px-8  ">
-        <p className="mx-auto max-w-md text-center leading-relaxed text-sm xl:text-base text-gray-600 dark:text-gray-700 2xl:text-xl ">
+    <footer className=" relative  ">
+      <div className="bg-black dark:bg-white opacity-60  h-[1px] w-[95%]  absolute left-[2.5%]"></div>
+      <div
+        className={` ${
+          /^\/post\//.test(location.pathname)
+            ? " flex flex-col w-full"
+            : "mx-auto max-w-full"
+        }  pt-4 2xl:pt-6 px-4 pb-6 sm:px-6 lg:px-8  `}
+      >
+        <p className=" max-w-full text-center leading-relaxed text-sm xl:text-base text-gray-600 dark:text-gray-700 2xl:text-xl ">
           {t("footer.slogan")}
         </p>
 

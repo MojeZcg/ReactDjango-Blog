@@ -52,7 +52,7 @@ function Navbar({ dispatch }) {
     },
   ];
 
-  const { t, i18n } = useTranslation("global");
+  const { t, i18n } = useTranslation("home");
 
   const [nav, setNav] = useState(true);
   const [links, setLinks] = useState([]);

@@ -77,7 +77,7 @@ class PostDetailView(APIView):
             else:
                 ip = request.META.get('REMOTE_ADDR')
                 
-            if not ViewCount.objects.filter(post=post, ip_address=ip):
+            if ViewCount.objects.filter(post=post, ip_address=ip):
                 view = ViewCount(post=post, ip_address=ip)
                 view.save()
                 post.views += 1 

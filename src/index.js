@@ -10,8 +10,14 @@ import i18 from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { ES } from "languages/es/global";
-import { EN } from "languages/en/global";
+import { BlogEN } from "languages/en/blog";
+import { HomeEN } from "languages/en/home";
+import { AboutEN } from "languages/en/about";
+import { ContactEN } from "languages/en/contact";
+import { HomeES } from "languages/es/home";
+import { BlogES } from "languages/es/blog";
+import { AboutES } from "languages/es/about";
+import { ContactES } from "languages/es/contact";
 
 i18
   .use(initReactI18next)
@@ -20,10 +26,16 @@ i18
   .init({
     resources: {
       en: {
-        global: EN,
+        home: HomeEN,
+        blog: BlogEN,
+        about: AboutEN,
+        contact: ContactEN,
       },
       es: {
-        global: ES,
+        home: HomeES,
+        blog: BlogES,
+        about: AboutES,
+        contact: ContactES,
       },
     },
     detection: {

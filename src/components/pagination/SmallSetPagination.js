@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function SmaillSetPagination({ list_page, list, count }) {
+  const { t } = useTranslation("blog");
   const [active, setActive] = useState(1);
   const [listingPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
@@ -85,7 +87,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
               >
                 <div className="flex items-center justify-center gap-2">
                   <FaArrowLeft className="" />
-                  Previous
+                  {t("previous")}
                 </div>
               </button>
             </div>
@@ -104,7 +106,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
                 className="relative block rounded bg-transparent px-3 py-2 border border-gray-700 hover:border-black  hover:text-black text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:border-neutral-200 dark:hover:bg-neutral-950 dark:hover:text-white"
               >
                 <div className="flex items-center justify-center gap-2 dark:text-white">
-                  Next
+                  {t("next")}
                   <FaArrowRight className="" />
                 </div>
               </button>

@@ -6,8 +6,8 @@ function Layout({ children }) {
   return (
     <div
       className={`${
-        /^\/post\//.test(location.pathname) ? "" : "dark:bg-black"
-      } font-Main `}
+        /^\/post\//.test(location.pathname) ? "" : "dark:bg-neutral-950"
+      } font-Main transition-all duration-500 ease-in-out `}
     >
       {children}
     </div>
