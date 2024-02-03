@@ -5,6 +5,10 @@ from django.urls import include, path, re_path
 from django.views.generic import TemplateView
 
 urlpatterns = [
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+    path('auth/', include('djoser.social.urls')),
+    
     path('api/blog/', include('apps.blog.urls')),
     path('api/category/', include('apps.category.urls')),
 
