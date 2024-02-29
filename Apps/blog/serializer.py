@@ -11,6 +11,7 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = [
             'id', 
+            'author',
             'title',
             'slug',
             'thumbnail',
@@ -20,7 +21,8 @@ class PostSerializer(serializers.ModelSerializer):
             'published',
             'views',
             'category',
-            'status'
+            'status',
+            'thumbnail_size'
         ]
 
 class PostListSerializer(serializers.ModelSerializer):
@@ -35,6 +37,7 @@ class PostListSerializer(serializers.ModelSerializer):
             'description',
             'time_read',
             'published',
+            'status',
             'views',
             'category'
         ]

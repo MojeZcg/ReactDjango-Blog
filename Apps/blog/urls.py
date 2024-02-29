@@ -1,11 +1,32 @@
 from django.urls import path
 
-from .views import BlogListView, ListByCategoryView, PostDetailView, SearchBlogView
+from .views import (
+    AuthorBlogListView,
+    AuthorPostDetailView,
+    BlogListView,
+    CreateBlogPostView,
+    DeleteBlogPostView,
+    DraftBlogPostView,
+    EditBlogPostView,
+    ListByCategoryView,
+    PostDetailView,
+    PublishBlogPostView,
+    SearchBlogView,
+)
 
 urlpatterns = [
-    path('list', BlogListView.as_view()),
-    path('by_category', ListByCategoryView.as_view()),
-    
     path('detail/<slug>', PostDetailView.as_view()),
-    path('search', SearchBlogView.as_view())
+    path('author_detail/<slug>', AuthorPostDetailView.as_view()),
+    
+    path('list', BlogListView.as_view()),
+    path('author_list', AuthorBlogListView.as_view()),
+    
+    path('by_category', ListByCategoryView.as_view()),
+
+    path('search', SearchBlogView.as_view()),
+    path('edit', EditBlogPostView.as_view()),
+    path('draft', DraftBlogPostView.as_view()),
+    path('publish', PublishBlogPostView.as_view()),
+    path('delete/<slug>', DeleteBlogPostView.as_view()),
+    path('create', CreateBlogPostView.as_view()),
 ]

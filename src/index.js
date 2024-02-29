@@ -10,6 +10,7 @@ import i18 from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
+
 import { BlogEN } from "languages/en/blog";
 import { HomeEN } from "languages/en/home";
 import { AboutEN } from "languages/en/about";
@@ -50,11 +51,7 @@ i18
         "subdomain",
       ],
     },
-    lng: "es",
     fallbackLng: ["es", "en"],
-    backend: {
-      loadPath: "/languages/{{lng}}/global.json",
-    },
   });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -66,13 +63,11 @@ const loadingMarkup = (
 );
 
 root.render(
-  <>
-    <Provider store={store}>
-      <Suspense fallback={loadingMarkup}>
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      </Suspense>
-    </Provider>
-  </>
+  <Provider store={store}>
+    <Suspense fallback={loadingMarkup}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Suspense>
+  </Provider>
 );

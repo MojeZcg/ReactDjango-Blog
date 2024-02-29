@@ -57,8 +57,8 @@ function Post({ get_blog, post }) {
               />
             </div>
             <div className="flex flex-col items-center justify-center pt-36  px-16 dark:text-gray-300 bg-neutral-100 dark:bg-neutral-950 transition-all duration-300 ease-in-out ">
-              <div className=" flex justify-center flex-col w-full   max-w-5xl z-20 pb-16 ">
-                <h1 className="  pt-24 pb-5 text-5xl text-ellipsis font-bold text-slate-950 drop-shadow-lg dark:text-slate-200 ">
+              <div className="  w-full line-clamp-4 max-w-5xl z-20 pb-16 ">
+                <h1 className="  pt-24 pb-5 text-5xl font-bold text-slate-950 drop-shadow-lg dark:text-slate-200 ">
                   {post.title}
                 </h1>
 

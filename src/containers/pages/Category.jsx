@@ -51,7 +51,7 @@ function Category({
           content="blog, blog de software, blog de marketing digital, blog de actualidad, blog, software blog, digital marketing blog, current affairs blog"
         />
         <meta name="robots" content="all" />
-        <link rel="canonical" href="http://localhost:8000" />
+        <link rel="canonical" href={process.env.REACT_APP_API_URL} />
         <meta name="author" content="Walter J. Montenegro" />
         <meta name="publisher" content="MojeZcg" />
 

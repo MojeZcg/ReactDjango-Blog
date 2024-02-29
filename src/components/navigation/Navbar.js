@@ -220,8 +220,8 @@ function Navbar({ dispatch }) {
                   {darkmode ? "Dark" : "Light"}
                 </span>
               </div>
-              <button
-                type="button"
+              <Link
+                to="http://192.168.1.105:3001/"
                 className="flex items-center justify-center text-base ml-0 lg:ml-4 my-0 rounded-md text-center border-transparent bg-oro 
                 lg:text-lg
                 px-3 py-3 
@@ -245,7 +245,7 @@ function Navbar({ dispatch }) {
                 {t("navbutton")}
                 {/** */}
                 <LuPencilLine className="ml-1 inline-flex w-6 h-6 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5" />
-              </button>
+              </Link>
             </div>
           </div>
           <div

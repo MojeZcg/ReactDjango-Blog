@@ -1,16 +1,19 @@
+import os
+from uuid import uuid4
+
 from ckeditor.fields import RichTextField
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
 from apps.category.models import Category
 
-# Create your models here.
+User = settings.AUTH_USER_MODEL
 
 def blog_thumbnail_directory(instance, filename):
     return 'blog/{0}/{1}'.format(instance.slug, filename)
 
 class Post(models.Model):
-    
     class PostObjects(models.Manager):
         def get_queryset(self):
             return super().get_queryset().filter(status='published')
@@ -20,25 +23,28 @@ class Post(models.Model):
         ('published', 'Published'),
     )
     
+    title =             models.CharField(max_length=255, blank=True, null=True)
+    slug =              models.SlugField(max_length=255, default=uuid4, unique=True,)
+    thumbnail =         models.ImageField(upload_to=blog_thumbnail_directory, max_length=500, blank=True, null=True) 
     
-    title =         models.CharField(max_length=255)
-    slug =          models.SlugField(max_length=255)
-    thumbnail =     models.ImageField(upload_to=blog_thumbnail_directory, max_length=500) 
+    author =            models.ForeignKey(User, on_delete=models.CASCADE)
 
-    description =   models.TextField(max_length=255)
-    content =       RichTextField()
+    description =       models.TextField(max_length=255, blank=True, null=True)
+    content =           RichTextField( blank=True, null=True)
 
-    time_read =     models.IntegerField(default=0)
+    time_read =         models.IntegerField(default=0, blank=True, null=True)
 
-    published =     models.DateField(default=timezone.now)
-    views =         models.IntegerField(default=0, blank=True)
+    published =         models.DateField(default=timezone.now)
+    views =             models.IntegerField(default=0, blank=True)
     
-    status =        models.CharField(max_length=10, choices=options, default='draft')
+    status =            models.CharField(max_length=10, choices=options, default='draft')
 
-    category =      models.ForeignKey(Category, on_delete=models.PROTECT)
+    category =          models.ForeignKey(Category, on_delete=models.PROTECT, blank=True, null=True)
 
-    objects =       models.Manager()
-    postobjects =   PostObjects() #Custom Manager
+    thumbnail_size=     models.PositiveIntegerField(null=True, blank=True)
+    
+    objects =           models.Manager()
+    postobjects =       PostObjects() #Custom Manager
     class Meta:
         ordering = ('-published',)
 
@@ -46,8 +52,14 @@ class Post(models.Model):
         return f"{self.title}"
 
     def get_view_count(self):
-        views = ViewCount.object.filter(category=self).count
+        views = ViewCount.objects.filter(category=self).count()
         return views
+    
+    def save(self, *args, **kwargs):
+        if self.thumbnail:
+            self.thumbnail_size = self.thumbnail.size
+        super().save(*args, **kwargs)
+    
 
 class ViewCount(models.Model):
     post = models.ForeignKey(Post, related_name='blogpost_view_count', on_delete=models.CASCADE)
