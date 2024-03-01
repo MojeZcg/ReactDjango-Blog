@@ -11,6 +11,7 @@ class UserSerializer(UserCreateSerializer):
         fields = [
             'id',
             'email',
+            'profilepicture', 
             'first_name',
             'last_name',
             'is_active',

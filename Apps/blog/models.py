@@ -7,8 +7,8 @@ from django.db import models
 from django.utils import timezone
 
 from apps.category.models import Category
+from apps.user.models import UserAccount as User
 
-User = settings.AUTH_USER_MODEL
 
 def blog_thumbnail_directory(instance, filename):
     return 'blog/{0}/{1}'.format(instance.slug, filename)
@@ -25,7 +25,7 @@ class Post(models.Model):
     
     title =             models.CharField(max_length=255, blank=True, null=True)
     slug =              models.SlugField(max_length=255, default=uuid4, unique=True,)
-    thumbnail =         models.ImageField(upload_to=blog_thumbnail_directory, max_length=500, blank=True, null=True) 
+    thumbnail =         models.ImageField(upload_to=blog_thumbnail_directory, blank=True, null=True) 
     
     author =            models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -45,6 +45,7 @@ class Post(models.Model):
     
     objects =           models.Manager()
     postobjects =       PostObjects() #Custom Manager
+        
     class Meta:
         ordering = ('-published',)
 

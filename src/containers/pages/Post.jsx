@@ -74,7 +74,7 @@ function Post({ get_blog, post }) {
                   </div>
                 </div>
 
-                <div className="flex-col  ">
+                <div className="flex flex-col ">
                   <h2 className=" pb-12 text-justify text-xl text-slate-900 dark:text-neutral-300 font-semibold ">
                     {post.description}
                   </h2>

@@ -29,8 +29,13 @@ class UserAccountManager(BaseUserManager):
         
         return user
     
+def profile_picture_directory(instance, filename):
+    return 'user/{0}/{1}'.format(instance.email, filename)
+    
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     email =         models.EmailField(max_length=255, unique=True)
+    
+    profilepicture = models.ImageField(upload_to=profile_picture_directory, blank=True, null=True)
     
     first_name =    models.CharField(max_length=50)
     last_name =     models.CharField(max_length=50)
@@ -43,7 +48,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     objects = UserAccountManager()
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name', ]
     
     def __str__(self):
         return self.email
