@@ -20,12 +20,12 @@
 
 ## Images
 <p >
-  <img src="images/DarkHomePage.png" alt="Dark Home Page" width="450" >
-  <img src="images/HomeScreen.png" alt="Home Page" width="450" >
-  <img src="images/DarkBlogPage.png" alt="DarkBlogPage" width="450" >
-  <img src="images/BlogPage.png" alt="Blog Page" width="450" >
-  <img src="images/PreviewPost.png" alt="Preview Post" width="450" >
-  <img src="images/AboutPage.png" alt="Preview Post" width="450" >
+  <img src="images/DarkHomePage.png" alt="Dark Home Page" width="400" >
+  <img src="images/HomeScreen.png" alt="Home Page" width="400" >
+  <img src="images/DarkBlogPage.png" alt="DarkBlogPage" width="400" >
+  <img src="images/BlogPage.png" alt="Blog Page" width="400" >
+  <img src="images/PreviewPost.png" alt="Preview Post" width="400" >
+  <img src="images/AboutPage.png" alt="Preview Post" width="400" >
 </p>
 
 ---
