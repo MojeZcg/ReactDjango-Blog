@@ -43,9 +43,8 @@ export default function SmaillSetPagination({ list_page, list, count }) {
 
       if (active === page) {
         content = (
-          <li>
+          <li key={i}>
             <div
-              key={i}
               className={`hidden md:flex items-center justify-center h-auto w-8`}
             >
               <div className="flex h-9 w-9  items-center justify-center text-sm text-black dark:text-white transition-all border border-t-black dark:border-t-white border-transparent duration-300 ease-in-out">
@@ -56,9 +55,8 @@ export default function SmaillSetPagination({ list_page, list, count }) {
         );
       } else {
         content = (
-          <li>
+          <li key={i}>
             <button
-              key={i}
               onClick={() => visitPage(page)}
               className={`hidden  md:flex items-center justify-center `}
             >
@@ -78,7 +76,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
   return (
     <nav aria-label="Page navigation example">
       <ul className="list-style-none flex items-center justify-end gap-2 mr-6">
-        <li>
+        <li key="4">
           {currentPage !== 1 ? (
             <div className="flex items-center justify-center pr-3 h-8 w-26">
               <button
@@ -96,7 +94,7 @@ export default function SmaillSetPagination({ list_page, list, count }) {
           )}
         </li>
         {get_numbers()}
-        <li>
+        <li key="3">
           {numbers.length === 0 || currentPage === numbers.length ? (
             <div className="flex-1 pl-3 h-8 w-26 aspect-w-1 aspect-h-1"></div>
           ) : (

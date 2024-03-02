@@ -6,12 +6,12 @@ export default function PostCard({ data }) {
   const { t } = useTranslation("blog");
 
   return (
-    <div className="border border-black/60 dark:border-white/70 hover:border-black hover:dark:border-white rounded-2xl">
+    <div className="border border-black/60 dark:border-white/70 hover:border-black hover:dark:border-white rounded-2xl w-full ">
       <Link
         to={`/post/${data.slug}`}
         className=" w-full h-64  flex items-center justify-between dark:text-white font-Main  "
       >
-        <div className="flex flex-col justify-between w-8/12 px-7">
+        <div className="flex flex-col justify-between w-8/12 2xl:w-9/12 px-7">
           <h3 className=" mb-2 text-4xl font-semibold truncate max-w-full ">
             {data.title}
           </h3>
@@ -34,11 +34,11 @@ export default function PostCard({ data }) {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center  dark:bg-neutral-950 rounded-r-2xl overflow-hidden h-64 dark:-z-0  -z-10 max-w-sm ">
+        <div className="flex items-center justify-center dark:bg-neutral-950 rounded-r-xl overflow-hidden h-full dark:-z-0 -z-10  w-2/6 2xl:w-3/12">
           <img
             src={`${process.env.REACT_APP_API_URL}${data.thumbnail}`}
-            className=" p-0 object-cover max-w-full   "
-            alt="Post"
+            className=" p-0 object-cover h-full aspect-[16/9] "
+            alt={data.title}
           />
         </div>
       </Link>

@@ -4,19 +4,16 @@ export default function ContactForm() {
   const { t } = useTranslation("contact");
   return (
     <section className="bg-white dark:bg-neutral-950 transition-all duration-500 ease-in-out">
-      <div className="py-8 lg:pt-10 2xl:py-52 pb-24 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+      <div className="py-12 lg:pt-4 pb-24 px-4 mx-auto max-w-screen-md">
+        <h2 className="mb-3 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           {t("contact")}
         </h2>
-        <p className="mb-6 lg:mb-10 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+        <p className="mb-4 lg:mb-5 font-light text-center text-gray-500 dark:text-gray-400 sm:text-lg xl:text-base">
           {t("subtitle")}
         </p>
-        <form action="#" className="space-y-6">
+        <form action="#" className="space-y-4">
           <div>
-            <label
-              for="email"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
               {t("label.email")}
             </label>
             <input
@@ -28,10 +25,7 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label
-              for="subject"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
               {t("label.subject")}
             </label>
             <input
@@ -43,10 +37,7 @@ export default function ContactForm() {
             />
           </div>
           <div className="sm:col-span-2">
-            <label
-              for="message"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-            >
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
               {t("label.message")}
             </label>
             <textarea
@@ -58,7 +49,7 @@ export default function ContactForm() {
           </div>
           <button
             type="submit"
-            class="py-3 px-5 text-sm font-medium border border-transparent hover:border-oro dark:border-white text-center text-white rounded-lg bg-primary-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            className="py-3 px-5 text-sm font-medium border border-transparent hover:border-oro dark:border-white text-center text-white rounded-lg bg-primary-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
           >
             {t("button")}
           </button>

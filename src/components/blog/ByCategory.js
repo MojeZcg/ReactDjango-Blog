@@ -42,7 +42,7 @@ export default function ByCategory({ categories }) {
   };
 
   return (
-    <div className=" w-full py-3 text-dark dark:text-white font-Main">
+    <div className=" w-full py-3 2xl:py-4 text-dark dark:text-white font-Main">
       <div className="flex flex-row justify-between items-center">
         <ul className="flex flex-row gap-5 px-8">
           <li className="dark:bg-slate-900 border dark:border-white border-slate-900 bg-gray-50 h-8 rounded-lg flex items-center justify-center ">
@@ -94,7 +94,7 @@ export default function ByCategory({ categories }) {
             value={term}
             onChange={(e) => handleChange(e)}
             type="search"
-            className="focus:pl-3 pl-8 bg-gray-50 dark:bg-slate-900 focus:dark:bg-slate-800 focus:w-52 w-36 h-8 text-base rounded-full ring-transparent focus:ring-transparent focus:border-slate-900 focus:dark:border-white dark:text-white text-dark transition-all duration-500 ease-in-out"
+            className="focus:pl-3 pl-8 bg-gray-50 dark:bg-slate-900 focus:dark:bg-slate-800 focus:w-52 2xl:focus:w-64 2xl:h-9 w-44 h-8 text-base rounded-full ring-transparent focus:ring-transparent focus:border-slate-900 focus:dark:border-white dark:text-white text-dark transition-all duration-500 ease-in-out"
           />
         </form>
       </div>

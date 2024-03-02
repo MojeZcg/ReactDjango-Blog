@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 export default function AboutUs() {
   const { t } = useTranslation("about");
   return (
-    <section className="bg-gray-100 dark:bg-neutral-950 py-8">
-      <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-100 dark:bg-neutral-950 ">
+      <div className="container mx-auto pt-14 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div className="max-w-lg transition-all duration-500 ease-in-out">
             <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-100 sm:text-5xl">

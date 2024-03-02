@@ -1,4 +1,5 @@
 import os
+import shutil
 from uuid import uuid4
 
 from ckeditor.fields import RichTextField
@@ -14,6 +15,7 @@ def blog_thumbnail_directory(instance, filename):
     return 'blog/{0}/{1}'.format(instance.slug, filename)
 
 class Post(models.Model):
+    
     class PostObjects(models.Manager):
         def get_queryset(self):
             return super().get_queryset().filter(status='published')
@@ -25,7 +27,7 @@ class Post(models.Model):
     
     title =             models.CharField(max_length=255, blank=True, null=True)
     slug =              models.SlugField(max_length=255, default=uuid4, unique=True,)
-    thumbnail =         models.ImageField(upload_to=blog_thumbnail_directory, blank=True, null=True) 
+    thumbnail =         models.ImageField(upload_to=blog_thumbnail_directory, blank=True, null=True ) 
     
     author =            models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -45,7 +47,7 @@ class Post(models.Model):
     
     objects =           models.Manager()
     postobjects =       PostObjects() #Custom Manager
-        
+
     class Meta:
         ordering = ('-published',)
 
@@ -60,6 +62,19 @@ class Post(models.Model):
         if self.thumbnail:
             self.thumbnail_size = self.thumbnail.size
         super().save(*args, **kwargs)
+        
+    def delete(self, *args, **kwargs):
+            # Delete the thumbnail file and its parent folder
+            if self.thumbnail:
+                thumbnail_path = os.path.join(settings.MEDIA_ROOT, str(self.thumbnail))
+                thumbnail_folder = os.path.dirname(thumbnail_path)
+                if os.path.exists(thumbnail_path):
+                    os.remove(thumbnail_path)
+                if os.path.exists(thumbnail_folder):
+                    os.rmdir(thumbnail_folder)
+
+            super().delete(*args, **kwargs)
+
     
 
 class ViewCount(models.Model):
