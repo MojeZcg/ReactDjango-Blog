@@ -121,4 +121,4 @@ For questions or issues, contact me via [Email](https://mail.google.com/mail/u/0
 
 ## License
 
-This project is open-source and available under the [MIT License](./LICENSE).
+This project is open-source and available under the [Apache-2.0 LICENCE](./LICENSE).
