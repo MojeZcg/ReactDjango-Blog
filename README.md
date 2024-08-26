@@ -6,11 +6,10 @@
   <img src="images/BlogPage.png" alt="Blog Page" width="400" >
 </p>
 
-> [!NOTE]
->## Overview:
->
->This project showcases a modern and responsive blog page created using React and Django. The blog incorporates key features such as Dark Mode for enhanced readability, ensuring a pleasant user experience across different devices.
->
+## Overview:
+
+This project showcases a modern and responsive blog page created using React and Django. The blog incorporates key features such as Dark Mode for enhanced readability, ensuring a pleasant user experience across different devices.
+
 ## Features:
 
 - Dark Mode: Enjoy a visually comfortable reading experience in low-light environments with the Dark Mode feature.
